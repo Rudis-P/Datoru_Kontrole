@@ -1,0 +1,184 @@
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.AssemblyReference.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.AssemblyReference.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Contr.4AD2CEC8.Up2Date
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.AssemblyReference.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Contr.4AD2CEC8.Up2Date
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V5\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.AssemblyReference.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Contr.4AD2CEC8.Up2Date
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.config
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe.manifest
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.application
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\PC_Control_2.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.AssemblyReference.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2_MarkupCompile.lref
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\MainWindow.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetNameDialog.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.g.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.Properties.Resources.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.GenerateResource.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CoreCompileInputs.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe.manifest
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.application
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
