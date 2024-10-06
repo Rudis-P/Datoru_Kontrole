@@ -1,0 +1,160 @@
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.AssemblyReference.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\App.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\PC_C_Client\PC_C_Client\obj\Debug\App.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\App.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V0.1\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.AssemblyReference.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.g.cs
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\App.g.cs
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\App.baml
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.baml
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.application
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+C:\Users\Parlielupe1\Downloads\Datora Kontroles programma_V2\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\App.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V3\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\bin\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\App.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\Parole.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client\PC_C_Client\obj\Debug\Parole.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.pdb
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csprojAssemblyReference.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.g.cs
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.baml
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.application
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe
+F:\ManasProgas\PClaikaProga\Datora Kontroles programma_V2\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.pdb
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.AssemblyReference.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.g.cs
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.baml
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.application
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe
+C:\Users\Parlielupe1\Documents\Datora Kontroles programma_V6\Datora Kontroles programma_V5\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.application
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.AssemblyReference.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.application
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datora Kontroles programma_V6\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.pdb
