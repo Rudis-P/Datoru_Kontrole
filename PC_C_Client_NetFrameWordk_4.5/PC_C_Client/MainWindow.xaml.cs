@@ -202,7 +202,7 @@ namespace PC_C_Client
             AdminButton.Visibility = Visibility.Visible;
             LaiksBeidzas.Visibility = Visibility.Collapsed;
             StopTimer();
-            KeyboardHook.SetHook();   ///////////////////////////////Nobloķē tastatūru, izņemot ctrl alt delete
+            //KeyboardHook.SetHook();   ///////////////////////////////Nobloķē tastatūru, izņemot ctrl alt delete
 
             if (checkTimer != null)
             {
@@ -245,7 +245,7 @@ namespace PC_C_Client
 
 
 
-            KeyboardHook.RemoveHook();      ///////////////////////////////Nobloķē tastatūru, izņemot ctrl alt delete
+            //KeyboardHook.RemoveHook();      ///////////////////////////////Nobloķē tastatūru, izņemot ctrl alt delete
             StartCheckTimer();
         }
         private void CloseParoleLogs()

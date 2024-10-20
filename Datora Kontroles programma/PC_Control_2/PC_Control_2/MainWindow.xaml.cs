@@ -325,9 +325,22 @@ namespace PC_Control_2
             min60.IsEnabled = clientSelected;
             min120.IsEnabled = clientSelected;
 
-            if (!clientSelected)
+           
+            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
             {
-                TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                if (!clientSelected)
+                {
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                }
+                var client = clients.FirstOrDefault();
+                if (client.Status == "Bloķēts" || client.RemainingTime < 0)
+                {
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                }
+                else if(client.RemainingTime > 0)
+                {
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Green);
+                }
             }
 
         }
@@ -535,6 +548,26 @@ namespace PC_Control_2
         private void SendMessageText_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SelectAllPcsShtdw_Checked(object sender, RoutedEventArgs e)
+        {
+            ClientsDataGrid.SelectAll();
+        }
+
+        private void ClientsDataGrid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var clickedElement = e.OriginalSource as DependencyObject;
+
+            while (clickedElement != null && !(clickedElement is DataGridRow))
+            {
+                clickedElement = VisualTreeHelper.GetParent(clickedElement);
+            }
+            if (clickedElement == null)
+            {
+                ClientsDataGrid.SelectedItem = null;
+                TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+            }
         }
     }
 }
