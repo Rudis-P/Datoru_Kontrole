@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Data;
 
 namespace PC_Control_2
 {
@@ -205,12 +206,8 @@ namespace PC_Control_2
         private void SetTimeButton_Click(object sender, RoutedEventArgs e)
         {
 
-
-
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
-                //  Ja tekstboxā neieraksta nekādu laiku tad ieslēdzas infinite time
-
                 if (CustomTimeBox.Text == "" && clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
                     SendCommand(client, CommandType.StartInfiniteTimer, 0);
@@ -223,11 +220,12 @@ namespace PC_Control_2
 
                 }
             }
+              
         }
 
         private void RemoveTimeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
@@ -246,6 +244,8 @@ namespace PC_Control_2
                     }
                 }
             }
+
+
 
 
         }
@@ -271,7 +271,8 @@ namespace PC_Control_2
 
         private void SetTimer(CommandType commandType, int duration)
         {
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
@@ -316,6 +317,7 @@ namespace PC_Control_2
                     selectedClient.ClientTimer.Start();
                 }
             }
+
         }
 
         private void ClientsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -347,7 +349,7 @@ namespace PC_Control_2
 
         private void LockButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
@@ -363,10 +365,16 @@ namespace PC_Control_2
                         selectedClient.ClientTimer = null;
                     }
 
-                    refreshDataGrid();
                     selectedClient.RemainingTimeString = "00:00:00";
                 }
             }
+            refreshDataGrid();
+            if (SelectAllPcsShtdw.IsChecked == true)
+            {
+                SelectAllPcsShtdw.IsChecked = false;
+            }
+
+            
         }
 
         private void refreshDataGrid()
@@ -506,13 +514,13 @@ namespace PC_Control_2
 
         private void ShutDownPC_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
                     SendCommand(client, CommandType.ShutDown, 0);
                 }
-            }
+            }              
         }
 
         public enum CommandType
@@ -528,7 +536,7 @@ namespace PC_Control_2
 
         private void SendMessage_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
@@ -568,6 +576,16 @@ namespace PC_Control_2
                 ClientsDataGrid.SelectedItem = null;
                 TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
             }
+
+            if (SelectAllPcsShtdw.IsChecked == true)
+            {
+                SelectAllPcsShtdw.IsChecked = false;
+            }
+        }
+
+        private void SelectAllPcsShtdw_Unchecked(object sender, RoutedEventArgs e)
+        {
+            ClientsDataGrid.SelectedItem = null;
         }
     }
 }

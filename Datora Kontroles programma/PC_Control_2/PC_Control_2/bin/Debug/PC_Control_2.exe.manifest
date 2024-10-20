@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_Control_2.exe" size="130056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_Control_2.exe" size="130568">
       <assemblyIdentity name="PC_Control_2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bhqsc8IrutUET8APjFDfzgXQ2+KQaGO+wtQJ3tuKjxo=</dsig:DigestValue>
+        <dsig:DigestValue>i1RgMdice9JiXNdBHmC/9d9Pp3o+qz71xZwNj0VFQpE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
