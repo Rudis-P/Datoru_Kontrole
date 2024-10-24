@@ -34,7 +34,7 @@ namespace PC_Control_2
         private TcpListener server;
         private ObservableCollection<ClientInfo> clients;
         private Dictionary<string, TcpClient> clientConnections;
-
+        public bool closeSetting;
         public MainWindow()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace PC_Control_2
             ClientsDataGrid.ItemsSource = clients;
             StartServer();
             LoadClientNames();
-            Closing += OnClosing;
+
         }
 
         private void StartServer()
@@ -586,6 +586,78 @@ namespace PC_Control_2
         private void SelectAllPcsShtdw_Unchecked(object sender, RoutedEventArgs e)
         {
             ClientsDataGrid.SelectedItem = null;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            bool isChecked = menuItem.IsChecked;
+
+            // Save the user's preference to the settings
+            Properties.Settings.Default.ipColumnVisability = isChecked;
+            Properties.Settings.Default.Save();
+
+            // Apply the change to the DataGrid column
+            ClientsDataGrid.Columns[2].Visibility = isChecked ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void StatusColumnVisible__Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            bool isChecked = menuItem.IsChecked;
+
+            // Save the user's preference to the settings
+            Properties.Settings.Default.statusColumnVisable = isChecked;
+            Properties.Settings.Default.Save();
+
+            // Apply the change to the DataGrid column
+            ClientsDataGrid.Columns[3].Visibility = isChecked ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ClientsDataGrid.Columns[2].Visibility = Properties.Settings.Default.ipColumnVisability ? Visibility.Visible : Visibility.Collapsed;
+            ClientsDataGrid.Columns[3].Visibility = Properties.Settings.Default.statusColumnVisable ? Visibility.Visible : Visibility.Collapsed;
+            closeSetting = Properties.Settings.Default.closeConfirm;
+
+            // Also set the checkboxes in the menu based on saved settings
+            IPColumnVisible_.IsChecked = Properties.Settings.Default.ipColumnVisability;
+            StatusColumnVisible_.IsChecked = Properties.Settings.Default.statusColumnVisable;
+            CloseConfirm_.IsChecked = Properties.Settings.Default.closeConfirm;
+            if (closeSetting)
+            {
+                Closing += OnClosing;
+            }
+            else
+            {
+                Closing -= OnClosing;
+            }
+        }
+
+        private void CloseConfirm__Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            bool isChecked = menuItem.IsChecked;
+
+            // Save the user's preference to the settings
+            Properties.Settings.Default.closeConfirm = isChecked;
+            Properties.Settings.Default.Save();
+
+            // Apply the change to the DataGrid column
+            closeSetting = isChecked;
+            if (closeSetting)
+            {
+                Closing += OnClosing;
+            }
+            else
+            {
+                Closing -= OnClosing;
+            }
+        }
+
+        private void CloseNow_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

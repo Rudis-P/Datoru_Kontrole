@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Style="{StaticResource MaterialDesignWindow}"
         Title="   Datoru laika kontrole" Height="470" Width="800" MinHeight="470"
-        Icon="/logo.png">
+        Icon="/logo.png" Loaded="Window_Loaded">
     <Window.Resources>
         <Style TargetType="Button" x:Key="Btn_Main_Rnd">
             <Setter Property="Background" Value="White" />
@@ -144,16 +144,16 @@
 
             <Menu x:Name="MainMenu" Style="{StaticResource  MenuItemStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="11" FontSize="11" BorderBrush="#bc4749" Background="#FFBC4749" Foreground="White" Margin="0,0,0,2" MaxHeight="20" MinHeight="20" VerticalAlignment="Top" Panel.ZIndex="1000">
                 <MenuItem Header="_Programma" Background="#bc4749" Foreground="White" BorderBrush="#bc4749" Style="{StaticResource  MenuItemStyle1}">
-                    <MenuItem Header="_New" Foreground="#bc4749"/>
+                    <MenuItem Header="_Krāsas" Foreground="#bc4749"/>
                     <MenuItem Header="_Open" Foreground="#bc4749"/>
                     <MenuItem Header="_Save" Foreground="#bc4749"/>
-                    <MenuItem Header="_Prasīt pirm aizvērt" IsCheckable="True" IsChecked="True" Foreground="#bc4749"/>
+                    <MenuItem x:Name="CloseConfirm_" Header="_Prasīt pirm aizvērt" IsCheckable="True" IsChecked="True" Foreground="#bc4749" Click="CloseConfirm__Click"/>
                     <Separator />
-                    <MenuItem Header="_Exit" Foreground="#bc4749"/>
+                    <MenuItem x:Name="CloseNow" Header="_Exit" Foreground="#bc4749" Click="CloseNow_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Skats" Background="#bc4749" Style="{StaticResource  MenuItemStyle1}" Foreground="White">
-                    <MenuItem Header="_IP Kolona" IsCheckable="True" IsChecked="True" Foreground="#bc4749"/>
-                    <MenuItem Header="_Statusa Kolona" IsCheckable="True" IsChecked="True" Foreground="#bc4749" />
+                <MenuItem Header="_Skats"  Background="#bc4749" Style="{StaticResource  MenuItemStyle1}" Foreground="White">
+                    <MenuItem x:Name="IPColumnVisible_" Header="_IP Kolona" IsCheckable="True" IsChecked="True" Foreground="#bc4749" Click="MenuItem_Click"/>
+                    <MenuItem x:Name="StatusColumnVisible_" Header="_Statusa Kolona" IsCheckable="True" IsChecked="True" Foreground="#bc4749" Click="StatusColumnVisible__Click" />
                 </MenuItem>
             </Menu>
 
@@ -162,3 +162,9 @@
 
     
 </Window>
+
+    
+    
+    
+    
+    
