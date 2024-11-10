@@ -6,8 +6,15 @@
         xmlns:local="clr-namespace:PC_Control_2"
         mc:Ignorable="d"
         Style="{StaticResource MaterialDesignWindow}"
-        Title="   Datoru laika kontrole" Height="470" Width="800" MinHeight="470"
+        Title="   TimeStation" Height="470" Width="800" MinHeight="470"
         Icon="/logo.png" Loaded="Window_Loaded">
+
+
+    <!--Krāsas palete #bc4749 #f2e8cf #a7c957 #6a994e #386641 -->
+
+
+
+    <!--Galvenai pogu stils, ar apaļiem stūriem -->
     <Window.Resources>
         <Style TargetType="Button" x:Key="Btn_Main_Rnd">
             <Setter Property="Background" Value="White" />
@@ -30,7 +37,7 @@
             <Setter Property="Foreground" Value="#FFBC4749" />
         </Style>
 
-
+        <!--Sekundārais pogu stils, galvenokārt priekš izslēgt pogas -->
         <Style TargetType="Button" x:Key="Btn_Rnd">
             <Setter Property="TextBlock.TextAlignment" Value="Center" />
             <Setter Property="Template">
@@ -45,7 +52,6 @@
         </Style>
     </Window.Resources>
 
-    <!--Krāsas palete #bc4749 #f2e8cf #a7c957 #6a994e #386641 -->
 
     <Viewbox Stretch="UniformToFill" >
         <Grid Height="470" Width="850" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -79,9 +85,9 @@
 
             <DataGrid Name="ClientsDataGrid" Grid.Column="2" AutoGenerateColumns="False" IsReadOnly="True" Grid.ColumnSpan="8" Grid.Row="4" Grid.RowSpan="2" Background="#FF929292" SelectionChanged="ClientsDataGrid_SelectionChanged" Margin="0,0,0,1" Foreground="Black" FontFamily="Tahoma" GridLinesVisibility="Horizontal" SelectionMode="Extended" SelectionUnit="FullRow" MouseDown="ClientsDataGrid_MouseDown">
 
+                <!--Krāsu maiņas rindām, attiecīgi stāvoklim-->
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
-
                         <Style.Triggers>
                             <DataTrigger Binding="{Binding RemainingTime}" Value="0">
                                 <Setter Property="Background" Value="#a7c957">
@@ -90,8 +96,6 @@
                         </Style.Triggers>
                     </Style>
                 </DataGrid.RowStyle>
-
-                <!--bik gļuko ja unselect-->
 
                 <DataGrid.CellStyle>
                     <Style TargetType="DataGridCell">
@@ -105,13 +109,10 @@
 
 
                 <DataGrid.Columns>
-
-
                     <DataGridTextColumn Header="Nosaukums" Binding="{Binding Name}" Width="100" SortDirection="Ascending" SortMemberPath="Nosaukums"/>
                     <DataGridTextColumn Header="Atlikušais laiks" Binding="{Binding RemainingTimeString}" Width="100"/>
                     <DataGridTextColumn Header="Klienta IP" Binding="{Binding ClientIP}" Width="100"/>
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*"/>
-
                 </DataGrid.Columns>
 
                 <DataGrid.ContextMenu>
@@ -120,20 +121,21 @@
                     </ContextMenu>
                 </DataGrid.ContextMenu>
             </DataGrid>
+            
+            
             <Button Name="SetTimeButton" Style="{StaticResource Btn_Main_Rnd}" Content="Pielikt laiku" Click="SetTimeButton_Click" Grid.Column="8" Foreground="Black" Background="#FFBAEACE" BorderBrush="#FF007718"  Grid.Row="2" VerticalAlignment="Top" Height="25" HorizontalAlignment="Center" Width="100"/>
             <Button Name="RemoveTimeButton" Style="{StaticResource Btn_Main_Rnd}" Content="Noņemt laiku" Click="RemoveTimeButton_Click" Grid.Column="8" Foreground="Black" Background="#FFBAEACE" BorderBrush="#FF007718" VerticalAlignment="Top" Grid.Row="2" Height="25" HorizontalAlignment="Center" Width="100" Margin="0,35,0,0"/>
             <Button Name="LockButton" Content="Izslēgt laiku" Click="LockButton_Click" Grid.Column="9" Background="#bc4749" BorderBrush="#bc4749" Foreground="White" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Top" Width="100" Height="33" Margin="0, 3, 0, 0" Padding="2,4,2,4"/>
             <Button Name="min30" Style="{StaticResource Btn_Main_Rnd}" Content="30 min" Click="Min30Button_Click" Grid.Column="2" BorderBrush="#FF080808" Foreground="Black"  Grid.Row="2" FontWeight="Bold" Background="#FF252922" HorizontalAlignment="Center" VerticalAlignment="Center" Width="65" Height="35"/>
             <Button Name="min60" Style="{StaticResource Btn_Main_Rnd}" Content="1st" Click="Min60Button_Click" Grid.Column="3"  Background="#a7c957" BorderBrush="Black" Foreground="Black" Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="65" Height="35"/>
             <Button Name="min120" Style="{StaticResource Btn_Main_Rnd}" Content="2st" Click="Min120Button_Click" Grid.Column="4"  Background="#a7c957" BorderBrush="Black" Foreground="Black"  Grid.Row="2" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Width="65" Height="35"/>
-            <Grid x:Name="TimerImageGrid" Width="32" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
+            <Grid x:Name="TimerImageGrid" Width="32" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right"> <!--Laika attēls. Krāsots zaļš ar elipsi-->
                 <Ellipse x:Name="TimerEllipse" Width="32" Height="32" Fill="Transparent"/>
                 <Image Source="timer.png" Width="32" Height="32" Stretch="Uniform"  Panel.ZIndex="100"/>
             </Grid>
             <TextBox x:Name="CustomTimeBox" Grid.Column="6" HorizontalAlignment="Center" Height="46" TextWrapping="Wrap" VerticalAlignment="Center" Width="80" Grid.Row="2" FontSize="24" TextAlignment="Center" BorderBrush="#bc4749" Background="#f2e8cf" BorderThickness="1"/>
             <Button Name="SendMessage" Content="Nosūtīt brīdinājumu" Grid.Column="9" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Top" Width="129" Height="33" Click="SendMessage_Click" Background="#a7c957" BorderBrush="#FFBC4749" Foreground="White" FontWeight="Bold" Grid.ColumnSpan="2" Margin="0, 3, 0, 0" FontFamily="Microsoft JhengHei UI Light" FontSize="14" Padding="2,4,2,4"/>
             <Button Name="SendMessageText" Content="Brīdinājuma teksts" FontFamily="Microsoft JhengHei UI Light" Grid.Column="9" HorizontalAlignment="Left" Grid.Row="2" Width="129" Height="19" FontSize="9" Click="SendMessageText_Click" Background="#a7c957" VerticalAlignment="Bottom" Margin="0, 0, 0, 3" Padding="2,2,2,2" BorderBrush="#FFBC4749"/>
-
             <Button Name="ShutDownPC" Style="{StaticResource Btn_Rnd}" Content="Izslēgt Datoru" Grid.Column="9" Grid.Row="6" VerticalAlignment="Center" Width="115" Height="33" Click="ShutDownPC_Click" Background="#bc4749" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0, 0, 0, 20"/>
             <Label Content="Atzīmēt visus datorus: " Grid.Column="9" Grid.Row="6" VerticalAlignment="Bottom" Width="135" Height="25" FontSize="12" HorizontalAlignment="Right" Margin="0, 0, 15, 3"/>
             <CheckBox x:Name="SelectAllPcsShtdw" Grid.Column="9" Grid.Row="6" BorderBrush="#bc4749" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 0, 4, 2" Checked="SelectAllPcsShtdw_Checked" Unchecked="SelectAllPcsShtdw_Unchecked">
@@ -142,10 +144,14 @@
                 </CheckBox.LayoutTransform>
             </CheckBox>
 
+            
             <Menu x:Name="MainMenu" Style="{StaticResource  MenuItemStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="11" FontSize="11" BorderBrush="#bc4749" Background="#FFBC4749" Foreground="White" Margin="0,0,0,2" MaxHeight="20" MinHeight="20" VerticalAlignment="Top" Panel.ZIndex="1000">
                 <MenuItem Header="_Programma" Background="#bc4749" Foreground="White" BorderBrush="#bc4749" Style="{StaticResource  MenuItemStyle1}">
                     <MenuItem Header="_Krāsas" Foreground="#bc4749"/>
-                    <MenuItem Header="_Open" Foreground="#bc4749"/>
+                    <MenuItem Header="_Maksa" Foreground="#bc4749">
+                        <MenuItem x:Name="MoneyConfirm_" Header="_Maksājumu skaitīšana" IsCheckable="True" IsChecked="False" Foreground="#bc4749" Click="MoneyConfirm__Click"/>
+                        <MenuItem x:Name="MoneyMultiplierDialog_" Header="_Maksājuma koedicients" Foreground="#bc4749" Click="MoneyMultiplierDialog__Click"/>
+                    </MenuItem>
                     <MenuItem Header="_Save" Foreground="#bc4749"/>
                     <MenuItem x:Name="CloseConfirm_" Header="_Prasīt pirm aizvērt" IsCheckable="True" IsChecked="True" Foreground="#bc4749" Click="CloseConfirm__Click"/>
                     <Separator />
@@ -157,10 +163,25 @@
                 </MenuItem>
             </Menu>
 
+
+            <!--Summas skaitītāja zona-->
+            <Border x:Name="MoneyGridBorder" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" BorderBrush="#bc4749" BorderThickness="2,2,2,2" Margin="0,10,33,10">
+                <Grid x:Name="MoneyGrid" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="95*"></ColumnDefinition>
+                        <ColumnDefinition Width="121*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="0" VerticalAlignment="Center" FontSize="22" Height="37" Grid.ColumnSpan="2" Margin="0,0,82,0">Summa:</Label>
+                    <Label Name="moneySumText" Grid.Column="1" Width="90" VerticalAlignment="Center" FontSize="22" HorizontalAlignment="Center" Padding="4,4,4,4" Height="37">0,00 €</Label>
+                </Grid>
+            </Border>
         </Grid>
     </Viewbox>
 
-    
+
 </Window>
 
     

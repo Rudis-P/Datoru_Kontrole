@@ -215,3 +215,5 @@ C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Dator
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\Microsoft.Xaml.Behaviors.xml
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\App.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetMoneyDialog.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetMoneyDialog.baml

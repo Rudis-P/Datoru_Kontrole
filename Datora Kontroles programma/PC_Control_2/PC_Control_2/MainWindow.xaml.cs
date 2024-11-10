@@ -20,21 +20,29 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data;
+using System.Timers;
 
 namespace PC_Control_2
 {
     /// <summary>
-    /// Datoru kontroles programma, kas spēj noteikt laiku un ieslēgt datora izmantošanu, sūtot komandas uz klienta programmu.
+    /// Datoru kontroles programma, kas spēj noteikt laiku un pieslēgt datora izmantošanu, sūtot komandas uz klienta programmu.
     /// 
     /// Ar programmu var ieslēgt 30 minūtes, 1 studnu, 2 stundas vai bezgalīgu laiku datoriem.
     /// 
+    /// Papildus informācija atroda dokumentacijā.
     /// </summary>
     public partial class MainWindow : Window
     {
+        ///Izvedotais serveris tīklā. Ja savienojas klients, tas tiek ielikts klases sarakstā
         private TcpListener server;
         private ObservableCollection<ClientInfo> clients;
         private Dictionary<string, TcpClient> clientConnections;
+
+
         public bool closeSetting;
+        public bool moneySetting;
+        public double moneyMultiplier;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,18 +50,20 @@ namespace PC_Control_2
             clientConnections = new Dictionary<string, TcpClient>();
             ClientsDataGrid.ItemsSource = clients;
             StartServer();
-            LoadClientNames();
+            LoadClientNames(); ///Ielādē saglabātos nosaukumus no saraksta
 
         }
 
         private void StartServer()
         {
+            ///Izveido severi, piešķirot tam 5000 portu.
             server = new TcpListener(IPAddress.Any, 5000);
             server.Start();
             Thread serverThread = new Thread(AcceptClients);
             serverThread.IsBackground = true;
             serverThread.Start();
         }
+
         private void LoadClientNames()
         {
             foreach (var client in clients)
@@ -74,11 +84,9 @@ namespace PC_Control_2
                     string clientName = NameStorage.GetName(clientIP);
                     Dispatcher.Invoke(() => clients.Add(new ClientInfo { ClientIP = clientIP, Name = clientName, Status = "Savienots" }));
                     clientConnections[clientIP] = client;
-
                     Thread clientThread = new Thread(() => HandleClient(client, clientIP));
                     clientThread.IsBackground = true;
                     clientThread.Start();
-
                     SendCommand(client, CommandType.Lock, 0);
                 }
             }
@@ -128,7 +136,6 @@ namespace PC_Control_2
             }
         }
 
-
         private void UpdateClientRemainingTime(string clientIP, int remainingTime)
         {
             var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
@@ -137,7 +144,7 @@ namespace PC_Control_2
                 client.RemainingTime = remainingTime;
             }
 
-            //  Ja beidzas laiks tad statusa nosaukums nomainās uz Locked
+            ///Ja beidzas laiks tad statusa nosaukums nomainās uz Locked
             if (remainingTime == 0)
             {
                 client.Status = "Bloķēts";
@@ -145,21 +152,24 @@ namespace PC_Control_2
             }
 
         }
+
         private void SetNameMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            ///Izpildot labo klikšķi uz kāda no pieslēgtiem klientiem.
             if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
             {
+                ///Saņem pašreizējo vārdu(Ja tāds ir) un nosūta to uz vārda dialogu.
                 string currentName = NameStorage.GetName(selectedClient.ClientIP);
                 SetNameDialog dialog = new SetNameDialog(currentName);
                 if (dialog.ShowDialog() == true)
                 {
+                    ///Saņem atpakaļ vārdu un pesaista to.
                     string newName = dialog.ClientName;
                     NameStorage.SaveName(selectedClient.ClientIP, newName);
                     selectedClient.Name = newName;
                 }
             }
         }
-
 
         private void UpdateClientStatus(string clientIP, string status)
         {
@@ -213,7 +223,7 @@ namespace PC_Control_2
                     SendCommand(client, CommandType.StartInfiniteTimer, 0);
                     selectedClient.Status = "Bezgalīgs laiks uzsākts";
                 }
-                // ja tekstboxā ieraksta laiku tad vai nu pieliekas ierakstītais laiks,  vai arī pieplusojās laiks pie esošā laika.
+                ///Ja tekstboxā ieraksta laiku tad vai nu pieliekas ierakstītais laiks, vai arī pieplusojās laiks pie esošā laika.
                 else
                 {
                     SetTimer(CommandType.StartTimer, Convert.ToInt32(this.CustomTimeBox.Text) * 60 + selectedClient.RemainingTime);
@@ -267,7 +277,7 @@ namespace PC_Control_2
         }
 
 
-        private DispatcherTimer globalTimer; //Atlikušā laika String atjaunināšanai
+        private DispatcherTimer globalTimer; ///Atlikušā laika String atjaunināšanai
 
         private void SetTimer(CommandType commandType, int duration)
         {
@@ -298,6 +308,12 @@ namespace PC_Control_2
                         Interval = TimeSpan.FromSeconds(1)
                     };
 
+                    if (moneySetting)
+                    {
+                        bool startMoney = true;
+                        SetMoney(selectedClient, startMoney);
+                    }
+
                     selectedClient.ClientTimer.Tick += (s, e) =>
                     {
                         if (selectedClient.RemainingTime > 0)
@@ -312,6 +328,11 @@ namespace PC_Control_2
                             selectedClient.ClientTimer.Stop();
                             selectedClient.IsTimerActive = false;
                             TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                            if (moneySetting)
+                            {
+                                bool startMoney = false;
+                                SetMoney(selectedClient, startMoney);
+                            }
                         }
                     };
                     selectedClient.ClientTimer.Start();
@@ -333,6 +354,11 @@ namespace PC_Control_2
                 if (!clientSelected)
                 {
                     TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                    moneySumText.Content = "0,00 €";
+                }
+                else
+                {
+                    moneySumText.Content = $"{selectedClient.MoneyCounter:F2} €";
                 }
                 var client = clients.FirstOrDefault();
                 if (client.Status == "Bloķēts" || client.RemainingTime < 0)
@@ -366,6 +392,12 @@ namespace PC_Control_2
                     }
 
                     selectedClient.RemainingTimeString = "00:00:00";
+
+                    if (moneySetting)
+                    {
+                        bool startMoney = false;
+                        SetMoney(selectedClient, startMoney);
+                    }
                 }
             }
             refreshDataGrid();
@@ -412,6 +444,7 @@ namespace PC_Control_2
             private int remainingTime;
             private string remainingTimeString;
             private DispatcherTimer clientTimer;
+            private double moneyCounter;
 
             public string ClientIP
             {
@@ -481,6 +514,16 @@ namespace PC_Control_2
                 {
                     clientTimer = value;
                     OnPropertyChanged(nameof(ClientTimer));
+                }
+            }
+
+            public double MoneyCounter
+            {
+                get => moneyCounter;
+                set
+                {
+                    moneyCounter = value;
+                    OnPropertyChanged(nameof(MoneyCounter));
                 }
             }
 
@@ -575,6 +618,7 @@ namespace PC_Control_2
             {
                 ClientsDataGrid.SelectedItem = null;
                 TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                moneySumText.Content = "0,00 €";
             }
 
             if (SelectAllPcsShtdw.IsChecked == true)
@@ -619,10 +663,21 @@ namespace PC_Control_2
             ClientsDataGrid.Columns[2].Visibility = Properties.Settings.Default.ipColumnVisability ? Visibility.Visible : Visibility.Collapsed;
             ClientsDataGrid.Columns[3].Visibility = Properties.Settings.Default.statusColumnVisable ? Visibility.Visible : Visibility.Collapsed;
             closeSetting = Properties.Settings.Default.closeConfirm;
-
+            moneySetting = Properties.Settings.Default.moneyConfirm;
             // Also set the checkboxes in the menu based on saved settings
             IPColumnVisible_.IsChecked = Properties.Settings.Default.ipColumnVisability;
             StatusColumnVisible_.IsChecked = Properties.Settings.Default.statusColumnVisable;
+            MoneyConfirm_.IsChecked = Properties.Settings.Default.moneyConfirm;
+            if (moneySetting)
+            {
+                MoneyGrid.Visibility = Visibility.Visible;
+                MoneyGridBorder.Visibility = Visibility.Visible;           
+            }
+            else
+            {
+                MoneyGrid.Visibility = Visibility.Hidden;
+                MoneyGridBorder.Visibility = Visibility.Hidden;
+            }
             CloseConfirm_.IsChecked = Properties.Settings.Default.closeConfirm;
             if (closeSetting)
             {
@@ -659,5 +714,75 @@ namespace PC_Control_2
         {
             Application.Current.Shutdown();
         }
+
+        private void MoneyMultiplierDialog__Click(object sender, RoutedEventArgs e)
+        {
+            // Retrieve the current multiplier from settings
+            double currentMultiplier = Properties.Settings.Default.moneyMultiplier;
+
+            // Open the SetMoneyDialog with the current multiplier value
+            SetMoneyDialog dialog = new SetMoneyDialog(currentMultiplier);
+
+            // Show the dialog and check if the user clicked "Confirm"
+            if (dialog.ShowDialog() == true)
+            {
+                // Save the new multiplier value to settings
+                Properties.Settings.Default.moneyMultiplier = dialog.MoneyMultiplier;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void MoneyConfirm__Click(object sender, RoutedEventArgs e)
+        {
+            MenuItem menuItem = sender as MenuItem;
+            bool isChecked = menuItem.IsChecked;
+
+            // Save the user's preference to the settings
+            Properties.Settings.Default.moneyConfirm = isChecked;
+            Properties.Settings.Default.Save();
+
+            // Apply the change to the DataGrid column
+            moneySetting = isChecked;
+            if (moneySetting)
+            {
+                MoneyGrid.Visibility = Visibility.Visible;
+                MoneyGridBorder.Visibility = Visibility.Visible;
+                
+            }
+            else
+            {
+                MoneyGrid.Visibility = Visibility.Hidden;
+                MoneyGridBorder.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void SetMoney(ClientInfo client, bool start)
+        {
+            if (start)
+            {
+                ///Jo laiks skaita uz leju, pašu nevar izmantot lai uzturētu skaitu. Tapēc ir pagaidu laiks un zemāk tiek izmantot izgājušais laiks, lai izņemtu sekundes priekš formulas.
+                int InitialDuration = client.RemainingTime;
+                client.MoneyCounter = 0;
+
+                ///katrā klienta iekšējā sekundes tikšķi izpilda summas formulu.
+                if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+                {
+                    selectedClient.ClientTimer.Tick += (s, e) =>
+                    {
+                        double elapsedSeconds = InitialDuration - client.RemainingTime;
+                        double multiplier = Properties.Settings.Default.moneyMultiplier; ///Ielāde no iestatījumiem koeficientu.
+                        selectedClient.MoneyCounter = (multiplier * ((100 * elapsedSeconds) / 1800))/100; ///Dala ar 100 jo skaitītājs ir centos.
+
+                        ///Atjauno skaitītāju saskarnē.
+                        if (ClientsDataGrid.SelectedItem == client)
+                        {
+                            moneySumText.Content = $"{client.MoneyCounter:F2} €";
+                        }
+                    };
+                }
+            }
+        }
+
+        
     }
 }

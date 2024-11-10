@@ -91,14 +91,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_Control_2.exe" size="132616">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_Control_2.exe" size="138760">
       <assemblyIdentity name="PC_Control_2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6qir4MPmg2psWIPBgbERck9gaK0gNodNnGYusHFMZX4=</dsig:DigestValue>
+        <dsig:DigestValue>TREFUVWSJwD5JtKYNHZQJ92wlwE3FxGUKsZiuIN4kR0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -111,13 +111,13 @@
       <dsig:DigestValue>0xk5ST+Ialk2wDGS0bdowddv97VntI5AJ1BEOtO/w/s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PC_Control_2.exe.config" size="1199">
+  <file name="PC_Control_2.exe.config" size="1450">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>S5pcJLHQV5rcH+1VVAgMQa7eyArNrUnNzDzqQsyMI3U=</dsig:DigestValue>
+      <dsig:DigestValue>GSIb4hMumHkM0HmkVBZGPy7ODHzfPYkXrXbHAncvDJ8=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

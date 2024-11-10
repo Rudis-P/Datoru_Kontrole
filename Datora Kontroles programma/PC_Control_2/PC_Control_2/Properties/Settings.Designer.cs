@@ -58,5 +58,29 @@ namespace PC_Control_2.Properties {
                 this["closeConfirm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool moneyConfirm {
+            get {
+                return ((bool)(this["moneyConfirm"]));
+            }
+            set {
+                this["moneyConfirm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public double moneyMultiplier {
+            get {
+                return ((double)(this["moneyMultiplier"]));
+            }
+            set {
+                this["moneyMultiplier"] = value;
+            }
+        }
     }
 }
