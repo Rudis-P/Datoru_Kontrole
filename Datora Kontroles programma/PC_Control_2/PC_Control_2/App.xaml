@@ -6,7 +6,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="PrimaryColor" Color="#6a994e" />
+            <SolidColorBrush x:Key="SecondaryColor" Color="#bc4749" />
+            <SolidColorBrush x:Key="TernaryColor" Color="#f2e8cf" />
+            <ResourceDictionary.MergedDictionaries>
             <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
             <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
         </ResourceDictionary.MergedDictionaries>

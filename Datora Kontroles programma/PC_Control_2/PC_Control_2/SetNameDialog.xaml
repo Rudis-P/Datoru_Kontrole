@@ -5,9 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Control_2"
         mc:Ignorable="d"
-        Title="SetNameDialog" Height="120" Width="300">
-    <StackPanel>
-        <TextBox x:Name="NameTextBox" Margin="10" Width="260"/>
-        <Button Content="OK" Click="OKButton_Click" Margin="10" Width="260"/>
+        Title="SetNameDialog" Height="120" Width="300" ResizeMode="NoResize" WindowStyle="None">
+
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="Btn_Main_Rnd">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="12" Background="{DynamicResource TernaryColor}" BorderBrush="{DynamicResource SecondaryColor}" BorderThickness="1,1,1,1" Margin="4, 0, 4, 0">
+                            <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel  Background="#6a994e">
+        <TextBox x:Name="NameTextBox" BorderBrush="{DynamicResource SecondaryColor}" Background="{DynamicResource TernaryColor}" Margin="10,28,10,10" Width="260"/>
+        <Button Style="{StaticResource Btn_Main_Rnd}" Content="OK" Click="OKButton_Click" Margin="10" Width="260"/>
     </StackPanel>
 </Window>

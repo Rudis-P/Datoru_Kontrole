@@ -21,6 +21,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Data;
 using System.Timers;
+using Xceed.Wpf.Toolkit;
 
 namespace PC_Control_2
 {
@@ -52,6 +53,18 @@ namespace PC_Control_2
             StartServer();
             LoadClientNames(); ///Ielādē saglabātos nosaukumus no saraksta
 
+            Color primaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.PrimaryColor);
+            Color secondaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.SecondaryColor);
+            Color ternaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.TernaryColor);
+
+            // Set the application resources to the loaded colors
+            Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(primaryColor);
+            Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(secondaryColor);
+            Application.Current.Resources["TernaryColor"] = new SolidColorBrush(ternaryColor);
+
+            ColPicker.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.PrimaryColor);
+            ColPicker1.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.SecondaryColor);
+            ColPicker2.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.TernaryColor);
         }
 
         private void StartServer()
@@ -92,7 +105,7 @@ namespace PC_Control_2
             }
             catch (Exception ex)
             {
-                Dispatcher.Invoke(() => MessageBox.Show($"Error accepting clients: {ex.Message}"));
+                Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"Error accepting clients: {ex.Message}"));
             }
         }
 
@@ -126,7 +139,7 @@ namespace PC_Control_2
             {
                 if (!(ex is SocketException || ex is IOException))
                 {
-                    Dispatcher.Invoke(() => MessageBox.Show($"Error handling client {clientIP}: {ex.Message}"));
+                    Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"Error handling client {clientIP}: {ex.Message}"));
                 }
             }
             finally
@@ -208,7 +221,7 @@ namespace PC_Control_2
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error sending command: {ex.Message}");
+                System.Windows.MessageBox.Show($"Error sending command: {ex.Message}");
             }
         }
 
@@ -250,7 +263,7 @@ namespace PC_Control_2
                     }
                     else
                     {
-                        MessageBox.Show("Nav ievadīts pareizs skaitlis.");
+                        System.Windows.MessageBox.Show("Nav ievadīts pareizs skaitlis.");
                     }
                 }
             }
@@ -590,7 +603,7 @@ namespace PC_Control_2
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
-            if (MessageBox.Show(this, "Aizvērt logu?", "Apstiprinājums", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            if (System.Windows.MessageBox.Show(this, "Aizvērt logu?", "Apstiprinājums", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
             {
                 cancelEventArgs.Cancel = true;
             }
@@ -687,6 +700,8 @@ namespace PC_Control_2
             {
                 Closing -= OnClosing;
             }
+
+            
         }
 
         private void CloseConfirm__Click(object sender, RoutedEventArgs e)
@@ -783,6 +798,59 @@ namespace PC_Control_2
             }
         }
 
-        
+        private void UpdatePrimaryColor(Color newColor)
+        {
+            Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(newColor);
+            Console.WriteLine("NewColorSet: "+ newColor);
+            this.DataContext = null;
+            this.DataContext = this;
+            Properties.Settings.Default.PrimaryColor = newColor.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void UpdateSecondaryColor(Color newColor)
+        {
+            Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(newColor);
+            this.DataContext = null;
+            this.DataContext = this;
+            Properties.Settings.Default.SecondaryColor = newColor.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void UpdateTernaryColor(Color newColor)
+        {
+            Application.Current.Resources["TernaryColor"] = new SolidColorBrush(newColor);
+            this.DataContext = null;
+            this.DataContext = this;
+            Properties.Settings.Default.TernaryColor = newColor.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void PrimaryColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            Console.WriteLine("PrimaryColorPicker_SelectedColorChanged called");
+            if (e.NewValue.HasValue)
+            {
+                Console.WriteLine("PrimaryColorPicker_SelectedColorChanged if successful");
+                UpdatePrimaryColor(e.NewValue.Value);
+            }
+        }
+
+        private void SecondaryColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (e.NewValue.HasValue)
+            {
+                UpdateSecondaryColor(e.NewValue.Value);
+            }
+        }
+
+        private void TernaryColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            if (e.NewValue.HasValue)
+            {
+                UpdateTernaryColor(e.NewValue.Value);
+            }
+        }
+
     }
 }

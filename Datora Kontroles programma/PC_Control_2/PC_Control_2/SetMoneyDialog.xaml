@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Control_2"
         mc:Ignorable="d"
-        Title="SetMoneyDialog" Height="80" Width="200">
+        Title="SetMoneyDialog" Height="100" Width="220" WindowStyle="None" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Button" x:Key="Btn_Main_Rnd">
             <Setter Property="Background" Value="White" />
@@ -13,7 +13,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="12" Background="#f2e8cf" BorderBrush="#bc4749" BorderThickness="1,1,1,1" Margin="4, 0, 4, 0">
+                        <Border CornerRadius="12" Background="{DynamicResource TernaryColor}" BorderBrush="{DynamicResource SecondaryColor}" BorderThickness="1,1,1,1" Margin="4, 0, 4, 0">
                             <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
                     </ControlTemplate>
@@ -32,7 +32,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Content="Ievadi naudas koeficientu:" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"></Label>
-        <TextBox x:Name="MoneyTextBox" Grid.Row="1" Grid.Column="0" Width="100" Height="25" BorderBrush="#bc4749" Background="#f2e8cf" HorizontalAlignment="Left" Margin="8,0,0,0"></TextBox>
+        <TextBox x:Name="MoneyTextBox" Grid.Row="1" Grid.Column="0" Width="100" Height="25" BorderBrush="{DynamicResource SecondaryColor}" Background="{DynamicResource TernaryColor}" HorizontalAlignment="Left" Margin="8,0,0,0"></TextBox>
         <Button x:Name="ConfirmClick" Style="{StaticResource Btn_Main_Rnd}" Grid.Row="1" Grid.Column="0"  Width="50" Height="25" Content="Ok" HorizontalAlignment="Right" Click="ConfirmClick_Click"></Button>
     </Grid>
 </Window>

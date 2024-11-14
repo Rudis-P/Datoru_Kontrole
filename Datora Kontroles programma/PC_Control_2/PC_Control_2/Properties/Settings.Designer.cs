@@ -82,5 +82,41 @@ namespace PC_Control_2.Properties {
                 this["moneyMultiplier"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string PrimaryColor {
+            get {
+                return ((string)(this["PrimaryColor"]));
+            }
+            set {
+                this["PrimaryColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SecondaryColor {
+            get {
+                return ((string)(this["SecondaryColor"]));
+            }
+            set {
+                this["SecondaryColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string TernaryColor {
+            get {
+                return ((string)(this["TernaryColor"]));
+            }
+            set {
+                this["TernaryColor"] = value;
+            }
+        }
     }
 }
