@@ -57,7 +57,6 @@ namespace PC_Control_2
             Color secondaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.SecondaryColor);
             Color ternaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.TernaryColor);
 
-            // Set the application resources to the loaded colors
             Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(primaryColor);
             Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(secondaryColor);
             Application.Current.Resources["TernaryColor"] = new SolidColorBrush(ternaryColor);
