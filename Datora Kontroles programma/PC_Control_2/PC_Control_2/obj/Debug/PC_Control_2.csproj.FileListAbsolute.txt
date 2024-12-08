@@ -235,3 +235,10 @@ C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Dator
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.csproj.CopyComplete
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.exe
 C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\ControlzEx.dll
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\MahApps.Metro.dll
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\ControlzEx.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\ControlzEx.xml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\MahApps.Metro.pdb
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\MahApps.Metro.xml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\bin\Debug\de\MahApps.Metro.resources.dll

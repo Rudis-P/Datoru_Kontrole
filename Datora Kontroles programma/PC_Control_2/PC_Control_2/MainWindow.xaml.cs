@@ -32,7 +32,7 @@ namespace PC_Control_2
     /// 
     /// Papildus informācija atroda dokumentacijā.
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         ///Izvedotais serveris tīklā. Ja savienojas klients, tas tiek ielikts klases sarakstā
         private TcpListener server;
@@ -672,6 +672,8 @@ namespace PC_Control_2
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Console.WriteLine("Application Loaded");
+
             ClientsDataGrid.Columns[2].Visibility = Properties.Settings.Default.ipColumnVisability ? Visibility.Visible : Visibility.Collapsed;
             ClientsDataGrid.Columns[3].Visibility = Properties.Settings.Default.statusColumnVisable ? Visibility.Visible : Visibility.Collapsed;
             closeSetting = Properties.Settings.Default.closeConfirm;
@@ -700,7 +702,46 @@ namespace PC_Control_2
                 Closing -= OnClosing;
             }
 
-            
+            var primaryColorString = Properties.Settings.Default.PrimaryColor;
+            if (!string.IsNullOrEmpty(primaryColorString))
+            {
+                var primaryColor = (Color)ColorConverter.ConvertFromString(primaryColorString);
+                Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(primaryColor);
+                ColPicker.SelectedColor = primaryColor;
+                Console.WriteLine($"Loaded PrimaryColor: {primaryColor}");
+            }
+            else
+            {
+                Console.WriteLine("No PrimaryColor saved; using default.");
+            }
+
+            // Load secondary color
+            var secondaryColorString = Properties.Settings.Default.SecondaryColor;
+            if (!string.IsNullOrEmpty(secondaryColorString))
+            {
+                var secondaryColor = (Color)ColorConverter.ConvertFromString(secondaryColorString);
+                Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(secondaryColor);
+                ColPicker1.SelectedColor = secondaryColor;
+                Console.WriteLine($"Loaded SecondaryColor: {secondaryColor}");
+            }
+            else
+            {
+                Console.WriteLine("No SecondaryColor saved; using default.");
+            }
+
+            // Load ternary color
+            var ternaryColorString = Properties.Settings.Default.TernaryColor;
+            if (!string.IsNullOrEmpty(ternaryColorString))
+            {
+                var ternaryColor = (Color)ColorConverter.ConvertFromString(ternaryColorString);
+                Application.Current.Resources["TernaryColor"] = new SolidColorBrush(ternaryColor);
+                ColPicker2.SelectedColor = ternaryColor;
+                Console.WriteLine($"Loaded TernaryColor: {ternaryColor}");
+            }
+            else
+            {
+                Console.WriteLine("No TernaryColor saved; using default.");
+            }
         }
 
         private void CloseConfirm__Click(object sender, RoutedEventArgs e)
@@ -799,12 +840,16 @@ namespace PC_Control_2
 
         private void UpdatePrimaryColor(Color newColor)
         {
+            Console.WriteLine($"Updating PrimaryColor to: {newColor}");
+
             Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(newColor);
             Console.WriteLine("NewColorSet: "+ newColor);
             this.DataContext = null;
             this.DataContext = this;
             Properties.Settings.Default.PrimaryColor = newColor.ToString();
             Properties.Settings.Default.Save();
+            Console.WriteLine($"PrimaryColor saved as: {Properties.Settings.Default.PrimaryColor}");
+
         }
 
         private void UpdateSecondaryColor(Color newColor)
@@ -831,6 +876,8 @@ namespace PC_Control_2
             if (e.NewValue.HasValue)
             {
                 Console.WriteLine("PrimaryColorPicker_SelectedColorChanged if successful");
+                Console.WriteLine($"PrimaryColor changed by user to: {e.NewValue.Value}");
+
                 UpdatePrimaryColor(e.NewValue.Value);
             }
         }
