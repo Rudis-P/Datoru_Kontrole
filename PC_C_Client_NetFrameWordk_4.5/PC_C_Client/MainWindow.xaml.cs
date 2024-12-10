@@ -27,7 +27,6 @@ namespace PC_C_Client
     /// šī programma savienojas ar kontroles programmu un pēc noklusējuma aizslēdz datoru, pārklājot ekrānu ar rectangle elementu. Ja tiek ieslēgts 
     /// laiks, parādās cits mazāks rectangle lements ar taimeri.
     /// 
-    /// !!!!! Pagaidām klienta programma veido savienojumu cur absolūto ip adresi, kas ir lasītavas datoram izmantojot 5000 portu.
     /// 
     /// </summary>
     public partial class MainWindow : Window
@@ -173,7 +172,7 @@ namespace PC_C_Client
                     StartTimer(duration);
                     break;
                 case CommandType.SendMessage:
-                    ShowCustomMessage();
+                    ShowCustomMessage(duration);
                     break;
                 case CommandType.ShutDown:
                     ShutDownComputer();
@@ -220,9 +219,22 @@ namespace PC_C_Client
             string parameters = $"/k \"{filename}\"";
             Process.Start("cmd", parameters);
         }
-        private void ShowCustomMessage()
+
+        public static string AsciiNumberToString(string input)
         {
-            string pazinojums = "Lūdzu uzvedieties klusāk!";
+            List<char> chars = new List<char>();
+            for (int i = 0; i < input.Length; i += 3)
+            {
+                int asciiCode = int.Parse(input.Substring(i, 3));
+                chars.Add((char)asciiCode);
+            }
+            return new string(chars.ToArray());
+        }
+
+        private void ShowCustomMessage(int durration)
+        {
+            string convertFromNumber = Convert.ToString(durration);
+            string pazinojums = AsciiNumberToString(convertFromNumber);
             EndTimerRectangle.Visibility = Visibility.Visible;
             PazinojumaText.Visibility = Visibility.Visible;
             PazinojumaButton.Visibility = Visibility.Visible;

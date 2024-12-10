@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_C_Client.exe" size="146440">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PC_C_Client.exe" size="478728">
       <assemblyIdentity name="PC_C_Client" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FlQ2EF7t0k8GEYCSYUIcQ0cpIu1cj6M9oleahLgnmfU=</dsig:DigestValue>
+        <dsig:DigestValue>Zhn1Ei6jQh4mqbB4CQbGg4TrbnVDH6bTCS6x2m06gtY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

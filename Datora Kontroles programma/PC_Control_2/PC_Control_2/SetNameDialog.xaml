@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PC_Control_2"
         mc:Ignorable="d"
-        Title="SetNameDialog" Height="120" Width="300" ResizeMode="NoResize" WindowStyle="None">
+        Title="Nosaukums" Height="120" Width="300" ResizeMode="NoResize" WindowStyle="None">
 
     <Window.Resources>
         <Style TargetType="Button" x:Key="Btn_Main_Rnd">

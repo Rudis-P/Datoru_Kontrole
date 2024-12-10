@@ -202,3 +202,26 @@ C:\Users\Rudolfs\OneDrive\Desktop\Darbi\C# code\DatoruKontrole_KursaDarbs_Main\P
 C:\Users\Rudolfs\OneDrive\Desktop\Darbi\C# code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.application
 C:\Users\Rudolfs\OneDrive\Desktop\Darbi\C# code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe
 C:\Users\Rudolfs\OneDrive\Desktop\Darbi\C# code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.pdb
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.config
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe.manifest
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.application
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.exe
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\bin\Debug\PC_C_Client.pdb
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.AssemblyReference.cache
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.SuggestedBindingRedirects.cache
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.g.cs
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.g.cs
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.g.cs
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.cache
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client_MarkupCompile.lref
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\App.baml
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\MainWindow.baml
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\Parole.baml
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.g.resources
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.Properties.Resources.resources
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.GenerateResource.cache
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.csproj.CoreCompileInputs.cache
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe.manifest
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.application
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.exe
+C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\PC_C_Client_NetFrameWordk_4.5\PC_C_Client\obj\Debug\PC_C_Client.pdb

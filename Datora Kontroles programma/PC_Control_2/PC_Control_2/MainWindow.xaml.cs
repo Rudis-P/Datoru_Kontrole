@@ -22,6 +22,7 @@ using System.Windows.Threading;
 using System.Data;
 using System.Timers;
 using Xceed.Wpf.Toolkit;
+using ControlzEx.Theming;
 
 namespace PC_Control_2
 {
@@ -52,18 +53,6 @@ namespace PC_Control_2
             ClientsDataGrid.ItemsSource = clients;
             StartServer();
             LoadClientNames(); ///Ielādē saglabātos nosaukumus no saraksta
-
-            Color primaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.PrimaryColor);
-            Color secondaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.SecondaryColor);
-            Color ternaryColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.TernaryColor);
-
-            Application.Current.Resources["PrimaryColor"] = new SolidColorBrush(primaryColor);
-            Application.Current.Resources["SecondaryColor"] = new SolidColorBrush(secondaryColor);
-            Application.Current.Resources["TernaryColor"] = new SolidColorBrush(ternaryColor);
-
-            ColPicker.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.PrimaryColor);
-            ColPicker1.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.SecondaryColor);
-            ColPicker2.SelectedColor = (Color)ColorConverter.ConvertFromString(Properties.Settings.Default.TernaryColor);
         }
 
         private void StartServer()
@@ -209,7 +198,7 @@ namespace PC_Control_2
         }
 
 
-        private void SendCommand(TcpClient client, CommandType commandType, int duration)
+        private void SendCommand(TcpClient client, CommandType commandType, int duration, string text = "")
         {
             try
             {
@@ -423,7 +412,7 @@ namespace PC_Control_2
 
         private void refreshDataGrid()
         {
-            ClientsDataGrid.ItemsSource = null;        //  Refresho datagridu
+            ClientsDataGrid.ItemsSource = null;    
             ClientsDataGrid.ItemsSource = clients;
 
             var view = CollectionViewSource.GetDefaultView(ClientsDataGrid.ItemsSource);
@@ -434,7 +423,6 @@ namespace PC_Control_2
                 view.Refresh();
             }
 
-            // Disable sorting on all columns except the Name column
             foreach (var column in ClientsDataGrid.Columns)
             {
                 if (column.Header.ToString() == "Nosaukums")
@@ -589,16 +577,36 @@ namespace PC_Control_2
             SendMessage
         }
 
+        public string customTextMessageToSend = "Noklusējums";
+
         private void SendMessage_Click(object sender, RoutedEventArgs e)
         {
             foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
-                    SendCommand(client, CommandType.SendMessage, 0);
+                    string messageTextConverted = StringToAsciiNumber(customTextMessageToSend); 
+                    int messageTextNumber = Convert.ToInt32(messageTextConverted);
+                    SendCommand(client, CommandType.SendMessage, messageTextNumber);
                 }
             }
         }
+
+        private void SendMessageText_Click(object sender, RoutedEventArgs e)
+        {
+            SetCustomMessageDialog dialog = new SetCustomMessageDialog();
+            if (dialog.ShowDialog() == true)
+            {
+                customTextMessageToSend = dialog.customTextMessage;
+            }
+        }
+
+        public static string StringToAsciiNumber(string input)
+        {
+            return string.Join("", input.Select(c => ((int)c).ToString()));
+        }
+
+
 
         private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
         {
@@ -606,11 +614,6 @@ namespace PC_Control_2
             {
                 cancelEventArgs.Cancel = true;
             }
-        }
-
-        private void SendMessageText_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void SelectAllPcsShtdw_Checked(object sender, RoutedEventArgs e)
@@ -648,12 +651,8 @@ namespace PC_Control_2
         {
             MenuItem menuItem = sender as MenuItem;
             bool isChecked = menuItem.IsChecked;
-
-            // Save the user's preference to the settings
             Properties.Settings.Default.ipColumnVisability = isChecked;
             Properties.Settings.Default.Save();
-
-            // Apply the change to the DataGrid column
             ClientsDataGrid.Columns[2].Visibility = isChecked ? Visibility.Visible : Visibility.Collapsed;
         }
 
@@ -661,24 +660,20 @@ namespace PC_Control_2
         {
             MenuItem menuItem = sender as MenuItem;
             bool isChecked = menuItem.IsChecked;
-
-            // Save the user's preference to the settings
             Properties.Settings.Default.statusColumnVisable = isChecked;
             Properties.Settings.Default.Save();
-
-            // Apply the change to the DataGrid column
             ClientsDataGrid.Columns[3].Visibility = isChecked ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Application Loaded");
+            ThemeManager.Current.ChangeTheme(this, "Dark.Blue");
 
             ClientsDataGrid.Columns[2].Visibility = Properties.Settings.Default.ipColumnVisability ? Visibility.Visible : Visibility.Collapsed;
             ClientsDataGrid.Columns[3].Visibility = Properties.Settings.Default.statusColumnVisable ? Visibility.Visible : Visibility.Collapsed;
             closeSetting = Properties.Settings.Default.closeConfirm;
             moneySetting = Properties.Settings.Default.moneyConfirm;
-            // Also set the checkboxes in the menu based on saved settings
             IPColumnVisible_.IsChecked = Properties.Settings.Default.ipColumnVisability;
             StatusColumnVisible_.IsChecked = Properties.Settings.Default.statusColumnVisable;
             MoneyConfirm_.IsChecked = Properties.Settings.Default.moneyConfirm;
@@ -748,12 +743,8 @@ namespace PC_Control_2
         {
             MenuItem menuItem = sender as MenuItem;
             bool isChecked = menuItem.IsChecked;
-
-            // Save the user's preference to the settings
             Properties.Settings.Default.closeConfirm = isChecked;
             Properties.Settings.Default.Save();
-
-            // Apply the change to the DataGrid column
             closeSetting = isChecked;
             if (closeSetting)
             {
@@ -772,16 +763,10 @@ namespace PC_Control_2
 
         private void MoneyMultiplierDialog__Click(object sender, RoutedEventArgs e)
         {
-            // Retrieve the current multiplier from settings
             double currentMultiplier = Properties.Settings.Default.moneyMultiplier;
-
-            // Open the SetMoneyDialog with the current multiplier value
             SetMoneyDialog dialog = new SetMoneyDialog(currentMultiplier);
-
-            // Show the dialog and check if the user clicked "Confirm"
             if (dialog.ShowDialog() == true)
             {
-                // Save the new multiplier value to settings
                 Properties.Settings.Default.moneyMultiplier = dialog.MoneyMultiplier;
                 Properties.Settings.Default.Save();
             }
@@ -792,11 +777,9 @@ namespace PC_Control_2
             MenuItem menuItem = sender as MenuItem;
             bool isChecked = menuItem.IsChecked;
 
-            // Save the user's preference to the settings
             Properties.Settings.Default.moneyConfirm = isChecked;
             Properties.Settings.Default.Save();
 
-            // Apply the change to the DataGrid column
             moneySetting = isChecked;
             if (moneySetting)
             {
@@ -898,5 +881,15 @@ namespace PC_Control_2
             }
         }
 
+        private void DefaultColors__Click(object sender, RoutedEventArgs e)
+        {
+            Color primaryColor = (Color)ColorConverter.ConvertFromString("#6a994e");
+            Color secondaryColor = (Color)ColorConverter.ConvertFromString("#bc4749");
+            Color tertiaryColor = (Color)ColorConverter.ConvertFromString("#f2e8cf");
+
+            UpdatePrimaryColor(primaryColor);
+            UpdateSecondaryColor(secondaryColor);
+            UpdateTernaryColor(tertiaryColor);
+        }
     }
 }

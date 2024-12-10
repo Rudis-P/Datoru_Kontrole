@@ -129,6 +129,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="NameStorage.cs" />
+    <Compile Include="SetCustomMessageDialog.xaml.cs">
+      <DependentUpon>SetCustomMessageDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SetMoneyDialog.xaml.cs">
       <DependentUpon>SetMoneyDialog.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SetCustomMessageDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SetMoneyDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

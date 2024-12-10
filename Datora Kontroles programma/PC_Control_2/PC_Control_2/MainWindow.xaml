@@ -10,11 +10,10 @@
         Style="{StaticResource MaterialDesignWindow}"
         Title="   TimeStation" Height="480" Width="840" MinHeight="400"
         Icon="/logo.png" Loaded="Window_Loaded" RenderOptions.BitmapScalingMode="HighQuality">
-        
 
     <!--Krāsas palete {DynamicResource SecondaryColor} {DynamicResource TernaryColor} #a7c957 #6a994e #386641 -->
 
-
+    
 
     <!--Galvenai pogu stils, ar apaļiem stūriem -->
     <Window.Resources>
@@ -53,6 +52,7 @@
             <Setter Property="FontSize" Value="14" />
         </Style>
 
+        
 
         <!--Sekundārais pogu stils, galvenokārt priekš izslēgt pogas -->
         <Style TargetType="Button" x:Key="Btn_Rnd">
@@ -63,6 +63,24 @@
                         <Border CornerRadius="8" Background="{DynamicResource SecondaryColor}" BorderBrush="{DynamicResource SecondaryColor}" BorderThickness="1,1,1,1" Margin="4, 0, 4, 0">
                             <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TitleBarButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource AccentColorBrush}" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="35" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -96,7 +114,7 @@
             </Grid.RowDefinitions>
 
             <DataGrid Name="ClientsDataGrid" Grid.Column="2" AutoGenerateColumns="False" IsReadOnly="True" Grid.ColumnSpan="9" Grid.Row="4" Grid.RowSpan="2" Background="#FFE8E5E0" SelectionChanged="ClientsDataGrid_SelectionChanged" Margin="0,0,0,1" Foreground="Black" FontFamily="Tahoma" GridLinesVisibility="Horizontal" SelectionMode="Extended" SelectionUnit="FullRow" MouseDown="ClientsDataGrid_MouseDown">
-
+            
                 <!--Krāsu maiņas rindām, attiecīgi stāvoklim-->
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
@@ -165,7 +183,6 @@
                         <MenuItem x:Name="MoneyConfirm_" TextOptions.TextFormattingMode="Display" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.ClearTypeHint="Enabled" Header="_Maksājumu skaitīšana" IsCheckable="True" IsChecked="False" Foreground="{DynamicResource SecondaryColor}" Click="MoneyConfirm__Click"/>
                         <MenuItem x:Name="MoneyMultiplierDialog_" TextOptions.TextFormattingMode="Display" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality" RenderOptions.ClearTypeHint="Enabled" Header="_Maksājuma koeficients" Foreground="{DynamicResource SecondaryColor}" Click="MoneyMultiplierDialog__Click"/>
                     </MenuItem>
-                    <MenuItem Header="_Atskaites" Foreground="{DynamicResource SecondaryColor}"/>
                     <MenuItem x:Name="CloseConfirm_" Header="_Prasīt pirm aizvērt" IsCheckable="True" IsChecked="True" Foreground="{DynamicResource SecondaryColor}" Click="CloseConfirm__Click"/>
                     <Separator />
                     <MenuItem x:Name="CloseNow" Header="_Iziet" Foreground="{DynamicResource SecondaryColor}" Click="CloseNow_Click"/>
@@ -176,7 +193,7 @@
                     <MenuItem x:Name="StatusColumnVisible_" Header="_Statusa Kolona" IsCheckable="True" IsChecked="True" Foreground="{DynamicResource SecondaryColor}" Click="StatusColumnVisible__Click" />
                 </MenuItem>
                 <MenuItem Header="_Dizains"  Background="{DynamicResource SecondaryColor}" Style="{StaticResource  MenuItemStyle1}" Foreground="White">
-                <MenuItem x:Name="DefaultColors_" Header="_Noklusējuma Krāsas" Foreground="{DynamicResource SecondaryColor}"/>
+                <MenuItem x:Name="DefaultColors_" Header="_Noklusējuma Krāsas" Foreground="{DynamicResource SecondaryColor}" Click="DefaultColors__Click"/>
                 <MenuItem x:Name="PrimaryColor_" Header="_Primārās krāsas"  Foreground="{DynamicResource SecondaryColor}" >
                     <xctk:ColorPicker x:Name="ColPicker" ColorMode="ColorCanvas" SelectedColorChanged="PrimaryColorPicker_SelectedColorChanged" ></xctk:ColorPicker>
 
