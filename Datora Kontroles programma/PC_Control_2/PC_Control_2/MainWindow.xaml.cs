@@ -198,7 +198,7 @@ namespace PC_Control_2
         }
 
 
-        private void SendCommand(TcpClient client, CommandType commandType, int duration, string text = "")
+        private void SendCommand(TcpClient client, CommandType commandType, int duration)
         {
             try
             {
@@ -585,9 +585,9 @@ namespace PC_Control_2
             {
                 if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
-                    string messageTextConverted = StringToAsciiNumber(customTextMessageToSend); 
-                    int messageTextNumber = Convert.ToInt32(messageTextConverted);
-                    SendCommand(client, CommandType.SendMessage, messageTextNumber);
+                    //string messageTextConverted = StringToAsciiNumber(customTextMessageToSend); 
+                    //int messageTextNumber = Convert.ToInt32(messageTextConverted);
+                    SendCommand(client, CommandType.SendMessage, 0);
                 }
             }
         }
