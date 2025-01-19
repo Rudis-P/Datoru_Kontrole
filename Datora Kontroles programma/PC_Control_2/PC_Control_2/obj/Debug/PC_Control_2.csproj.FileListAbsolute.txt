@@ -365,3 +365,5 @@ C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\Datora Kontroles
 C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\PC_Control_2.pdb
 C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetCustomMessageDialog.g.cs
 C:\Users\rudol\Documents\VS_Code\DatoruKontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetCustomMessageDialog.baml
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetCustomMessageDialog.g.cs
+C:\Users\Darbinieks\Documents\RudolfsP\WPF\Datoru Kontrole_KursaDarbs_Main\Datora Kontroles programma\PC_Control_2\PC_Control_2\obj\Debug\SetCustomMessageDialog.baml

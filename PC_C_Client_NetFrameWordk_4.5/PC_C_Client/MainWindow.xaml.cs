@@ -99,7 +99,7 @@ namespace PC_C_Client
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error connecting to server: {ex.Message}");
+                Console.WriteLine($"(Client 1)Error connecting to server: {ex.Message}");
             }
         }
 
@@ -118,14 +118,16 @@ namespace PC_C_Client
                     CommandType commandType = (CommandType)Enum.Parse(typeof(CommandType), parts[0]);
                     int duration = int.Parse(parts[1]);
 
-                    Dispatcher.Invoke(() => ExecuteCommand(commandType, duration));
+                    string? customMessage = parts.Length > 2 ? parts[2] : null;
+
+                    Dispatcher.Invoke(() => ExecuteCommand(commandType, duration, customMessage));
                 }
             }
             catch (Exception ex)
             {
                 if (!(ex is SocketException || ex is IOException))
                 {
-                    Dispatcher.Invoke(() => MessageBox.Show($"Error communicating with server: {ex.Message}"));
+                    Dispatcher.Invoke(() => MessageBox.Show($"(Client 2)Error communicating with server: {ex.Message}"));
                 }
                 ReconnectToServer();
             }
@@ -155,7 +157,7 @@ namespace PC_C_Client
 
         private DispatcherTimer checkTimer;
 
-        private void ExecuteCommand(CommandType commandType, int duration)
+        private void ExecuteCommand(CommandType commandType, int duration, string? customMessage = null)
         {
             switch (commandType)
             {
@@ -172,7 +174,7 @@ namespace PC_C_Client
                     StartTimer(duration);
                     break;
                 case CommandType.SendMessage:
-                    ShowCustomMessage(duration);
+                    ShowCustomMessage(customMessage);
                     break;
                 case CommandType.ShutDown:
                     ShutDownComputer();
@@ -220,25 +222,14 @@ namespace PC_C_Client
             Process.Start("cmd", parameters);
         }
 
-        public static string AsciiNumberToString(string input)
+        private void ShowCustomMessage(string? customMessage)
         {
-            List<char> chars = new List<char>();
-            for (int i = 0; i < input.Length; i += 3)
-            {
-                int asciiCode = int.Parse(input.Substring(i, 3));
-                chars.Add((char)asciiCode);
-            }
-            return new string(chars.ToArray());
-        }
-
-        private void ShowCustomMessage(int durration)
-        {
-            string convertFromNumber = Convert.ToString(durration);
-            string pazinojums = AsciiNumberToString(convertFromNumber);
+            string defaultMessage = "Noklusejums klientā";
+            string messageToDisplay = !string.IsNullOrWhiteSpace(customMessage) ? customMessage : defaultMessage;
             EndTimerRectangle.Visibility = Visibility.Visible;
             PazinojumaText.Visibility = Visibility.Visible;
             PazinojumaButton.Visibility = Visibility.Visible;
-            PazinojumaText.Text = pazinojums; 
+            PazinojumaText.Text = messageToDisplay;
 
         }
 

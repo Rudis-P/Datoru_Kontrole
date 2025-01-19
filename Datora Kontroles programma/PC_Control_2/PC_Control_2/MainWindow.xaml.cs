@@ -35,406 +35,8 @@ namespace PC_Control_2
     /// </summary>
     public partial class MainWindow
     {
-        ///Izvedotais serveris tīklā. Ja savienojas klients, tas tiek ielikts klases sarakstā
-        private TcpListener server;
-        private ObservableCollection<ClientInfo> clients;
-        private Dictionary<string, TcpClient> clientConnections;
+        ///****** Vispārīgie objekti, galvenā klase klientiem un sākuma inicializācijas ******///
 
-
-        public bool closeSetting;
-        public bool moneySetting;
-        public double moneyMultiplier;
-
-        public MainWindow()
-        {
-            InitializeComponent();
-            clients = new ObservableCollection<ClientInfo>();
-            clientConnections = new Dictionary<string, TcpClient>();
-            ClientsDataGrid.ItemsSource = clients;
-            StartServer();
-            LoadClientNames(); ///Ielādē saglabātos nosaukumus no saraksta
-        }
-
-        private void StartServer()
-        {
-            ///Izveido severi, piešķirot tam 5000 portu.
-            server = new TcpListener(IPAddress.Any, 5000);
-            server.Start();
-            Thread serverThread = new Thread(AcceptClients);
-            serverThread.IsBackground = true;
-            serverThread.Start();
-        }
-
-        private void LoadClientNames()
-        {
-            foreach (var client in clients)
-            {
-                client.Name = NameStorage.GetName(client.ClientIP);
-
-            }
-        }
-
-        private void AcceptClients()
-        {
-            try
-            {
-                while (true)
-                {
-                    TcpClient client = server.AcceptTcpClient();
-                    string clientIP = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
-                    string clientName = NameStorage.GetName(clientIP);
-                    Dispatcher.Invoke(() => clients.Add(new ClientInfo { ClientIP = clientIP, Name = clientName, Status = "Savienots" }));
-                    clientConnections[clientIP] = client;
-                    Thread clientThread = new Thread(() => HandleClient(client, clientIP));
-                    clientThread.IsBackground = true;
-                    clientThread.Start();
-                    SendCommand(client, CommandType.Lock, 0);
-                }
-            }
-            catch (Exception ex)
-            {
-                Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"Error accepting clients: {ex.Message}"));
-            }
-        }
-
-        private void HandleClient(TcpClient client, string clientIP)
-        {
-            try
-            {
-                NetworkStream stream = client.GetStream();
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-
-                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
-                {
-                    string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
-                    if (message.StartsWith("TIME_UPDATE:"))
-                    {
-                        string timeString = message.Substring("TIME_UPDATE:".Length);
-                        if (int.TryParse(timeString, out int remainingTime))
-                        {
-                            Dispatcher.Invoke(() => UpdateClientRemainingTime(clientIP, remainingTime));
-                        }
-                    }
-                    else
-                    {
-                        Dispatcher.Invoke(() => UpdateClientStatus(clientIP, message));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                if (!(ex is SocketException || ex is IOException))
-                {
-                    Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"Error handling client {clientIP}: {ex.Message}"));
-                }
-            }
-            finally
-            {
-                client.Close();
-                Dispatcher.Invoke(() => RemoveClient(clientIP));
-            }
-        }
-
-        private void UpdateClientRemainingTime(string clientIP, int remainingTime)
-        {
-            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
-            if (client != null)
-            {
-                client.RemainingTime = remainingTime;
-            }
-
-            ///Ja beidzas laiks tad statusa nosaukums nomainās uz Locked
-            if (remainingTime == 0)
-            {
-                client.Status = "Bloķēts";
-                refreshDataGrid();
-            }
-
-        }
-
-        private void SetNameMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            ///Izpildot labo klikšķi uz kāda no pieslēgtiem klientiem.
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
-            {
-                ///Saņem pašreizējo vārdu(Ja tāds ir) un nosūta to uz vārda dialogu.
-                string currentName = NameStorage.GetName(selectedClient.ClientIP);
-                SetNameDialog dialog = new SetNameDialog(currentName);
-                if (dialog.ShowDialog() == true)
-                {
-                    ///Saņem atpakaļ vārdu un pesaista to.
-                    string newName = dialog.ClientName;
-                    NameStorage.SaveName(selectedClient.ClientIP, newName);
-                    selectedClient.Name = newName;
-                }
-            }
-        }
-
-        private void UpdateClientStatus(string clientIP, string status)
-        {
-            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
-            if (client != null)
-            {
-                client.Status = status;
-                client.Name = NameStorage.GetName(clientIP);
-            }
-        }
-
-
-        private void RemoveClient(string clientIP)
-        {
-            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
-            if (client != null)
-            {
-                clients.Remove(client);
-            }
-
-            if (clientConnections.ContainsKey(clientIP))
-            {
-                clientConnections.Remove(clientIP);
-            }
-        }
-
-
-        private void SendCommand(TcpClient client, CommandType commandType, int duration)
-        {
-            try
-            {
-                NetworkStream stream = client.GetStream();
-                string command = $"{commandType}:{duration}";
-                byte[] data = Encoding.ASCII.GetBytes(command);
-                stream.Write(data, 0, data.Length);
-            }
-            catch (Exception ex)
-            {
-                System.Windows.MessageBox.Show($"Error sending command: {ex.Message}");
-            }
-        }
-
-
-        private void SetTimeButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
-            {
-                if (CustomTimeBox.Text == "" && clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
-                {
-                    SendCommand(client, CommandType.StartInfiniteTimer, 0);
-                    selectedClient.Status = "Bezgalīgs laiks uzsākts";
-                }
-                ///Ja tekstboxā ieraksta laiku tad vai nu pieliekas ierakstītais laiks, vai arī pieplusojās laiks pie esošā laika.
-                else
-                {
-                    SetTimer(CommandType.StartTimer, Convert.ToInt32(this.CustomTimeBox.Text) * 60 + selectedClient.RemainingTime);
-
-                }
-            }
-              
-        }
-
-        private void RemoveTimeButton_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
-            {
-                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
-                {
-                    if (int.TryParse(CustomTimeBox.Text, out int customTime) && customTime > 0)
-                    {
-                        int newDuration = selectedClient.RemainingTime - customTime * 60;
-                        if (newDuration < 0)
-                        {
-                            newDuration = 0;
-                        }
-                        SetTimer(CommandType.StartTimer, newDuration);
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show("Nav ievadīts pareizs skaitlis.");
-                    }
-                }
-            }
-
-
-
-
-        }
-
-
-        private void Min30Button_Click(object sender, RoutedEventArgs e)
-        {
-            SetTimer(CommandType.StartTimer, 30 * 60);
-        }
-
-        private void Min60Button_Click(object sender, RoutedEventArgs e)
-        {
-            SetTimer(CommandType.StartTimer, 60 * 60);
-        }
-
-        private void Min120Button_Click(object sender, RoutedEventArgs e)
-        {
-            SetTimer(CommandType.StartTimer, 120 * 60);
-        }
-
-
-        private DispatcherTimer globalTimer; ///Atlikušā laika String atjaunināšanai
-
-        private void SetTimer(CommandType commandType, int duration)
-        {
-
-            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
-            {
-                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
-                {
-                    TimeSpan time = TimeSpan.FromSeconds(duration);
-                    string str = time.ToString(@"hh\:mm\:ss");
-
-                    selectedClient.IsTimerActive = true;
-                    selectedClient.RemainingTimeString = str;
-                    selectedClient.RemainingTime = duration;
-
-                    SendCommand(client, commandType, duration);
-                    selectedClient.Status = $"{duration / 60} minūtes pieslēgtas";
-
-                    TimerEllipse.Fill = new SolidColorBrush(Colors.Green);
-
-                    if (selectedClient.ClientTimer != null)
-                    {
-                        selectedClient.ClientTimer.Stop();
-                    }
-
-                    selectedClient.ClientTimer = new DispatcherTimer
-                    {
-                        Interval = TimeSpan.FromSeconds(1)
-                    };
-
-                    if (moneySetting)
-                    {
-                        bool startMoney = true;
-                        SetMoney(selectedClient, startMoney);
-                    }
-
-                    selectedClient.ClientTimer.Tick += (s, e) =>
-                    {
-                        if (selectedClient.RemainingTime > 0)
-                        {
-                            selectedClient.RemainingTime--;
-                            TimeSpan remainingTimeSpan = TimeSpan.FromSeconds(selectedClient.RemainingTime);
-                            selectedClient.RemainingTimeString = remainingTimeSpan.ToString(@"hh\:mm\:ss");
-                            ClientsDataGrid.Items.Refresh();
-                        }
-                        else
-                        {
-                            selectedClient.ClientTimer.Stop();
-                            selectedClient.IsTimerActive = false;
-                            TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
-                            if (moneySetting)
-                            {
-                                bool startMoney = false;
-                                SetMoney(selectedClient, startMoney);
-                            }
-                        }
-                    };
-                    selectedClient.ClientTimer.Start();
-                }
-            }
-
-        }
-
-        private void ClientsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            bool clientSelected = ClientsDataGrid.SelectedItem != null;
-            min30.IsEnabled = clientSelected;
-            min60.IsEnabled = clientSelected;
-            min120.IsEnabled = clientSelected;
-
-           
-            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
-            {
-                if (!clientSelected)
-                {
-                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
-                    moneySumText.Content = "0,00 €";
-                }
-                else
-                {
-                    moneySumText.Content = $"{selectedClient.MoneyCounter:F2} €";
-                }
-                var client = clients.FirstOrDefault();
-                if (client.Status == "Bloķēts" || client.RemainingTime < 0)
-                {
-                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
-                }
-                else if(client.RemainingTime > 0)
-                {
-                    TimerEllipse.Fill = new SolidColorBrush(Colors.Green);
-                }
-            }
-
-        }
-
-        private void LockButton_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
-            {
-                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
-                {
-                    SendCommand(client, CommandType.Lock, 0);
-                    selectedClient.Status = "Bloķēts";
-                    selectedClient.RemainingTime = 0;
-
-                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
-
-                    if (selectedClient.ClientTimer != null)
-                    {
-                        selectedClient.ClientTimer.Stop();
-                        selectedClient.ClientTimer = null;
-                    }
-
-                    selectedClient.RemainingTimeString = "00:00:00";
-
-                    if (moneySetting)
-                    {
-                        bool startMoney = false;
-                        SetMoney(selectedClient, startMoney);
-                    }
-                }
-            }
-            refreshDataGrid();
-            if (SelectAllPcsShtdw.IsChecked == true)
-            {
-                SelectAllPcsShtdw.IsChecked = false;
-            }
-
-            
-        }
-
-        private void refreshDataGrid()
-        {
-            ClientsDataGrid.ItemsSource = null;    
-            ClientsDataGrid.ItemsSource = clients;
-
-            var view = CollectionViewSource.GetDefaultView(ClientsDataGrid.ItemsSource);
-            if (view != null)
-            {
-                view.SortDescriptions.Clear();
-                view.SortDescriptions.Add(new SortDescription("Nosaukums", ListSortDirection.Ascending));
-                view.Refresh();
-            }
-
-            foreach (var column in ClientsDataGrid.Columns)
-            {
-                if (column.Header.ToString() == "Nosaukums")
-                {
-                    column.CanUserSort = true;
-                }
-                else
-                {
-                    column.CanUserSort = false;
-                }
-            }
-        }
         public class ClientInfo : INotifyPropertyChanged
         {
             private string clientIP;
@@ -475,7 +77,6 @@ namespace PC_Control_2
                     OnPropertyChanged(nameof(remainingTimeString));
                 }
             }
-
 
             public string Name
             {
@@ -535,23 +136,383 @@ namespace PC_Control_2
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        ///Izvedotais serveris tīklā. Ja savienojas klients, tas tiek ielikts klases sarakstā
+        private TcpListener server;
+        private ObservableCollection<ClientInfo> clients;
+        private Dictionary<string, TcpClient> clientConnections;
+
+
+        public bool closeSetting;
+        public bool moneySetting;
+        public double moneyMultiplier;
+
+        public MainWindow()
         {
+            InitializeComponent();
+            clients = new ObservableCollection<ClientInfo>();
+            clientConnections = new Dictionary<string, TcpClient>();
+            ClientsDataGrid.ItemsSource = clients;
+            StartServer();
+            LoadClientNames(); ///Ielādē saglabātos nosaukumus no saraksta
+        }
+
+
+
+        ///****** Servera uzsākšana un klientu saņemšana/uzturēšana ******///
+
+        private void StartServer()
+        {
+            ///Izveido severi, piešķirot tam 5000 portu.
+            server = new TcpListener(IPAddress.Any, 5000);
+            server.Start();
+            Thread serverThread = new Thread(AcceptClients);
+            serverThread.IsBackground = true;
+            serverThread.Start();
+        }
+
+        private void LoadClientNames()
+        {
+            foreach (var client in clients)
+            {
+                client.Name = NameStorage.GetName(client.ClientIP);
+
+            }
+        }
+
+        private void AcceptClients()
+        {
+            try
+            {
+                while (true)
+                {
+                    TcpClient client = server.AcceptTcpClient();
+                    string clientIP = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
+                    string clientName = NameStorage.GetName(clientIP);
+                    Dispatcher.Invoke(() => clients.Add(new ClientInfo { ClientIP = clientIP, Name = clientName, Status = "Savienots" }));
+                    clientConnections[clientIP] = client;
+                    Thread clientThread = new Thread(() => HandleClient(client, clientIP));
+                    clientThread.IsBackground = true;
+                    clientThread.Start();
+                    SendCommand(client, CommandType.Lock, 0);
+                }
+            }
+            catch (Exception ex)
+            {
+                Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"(Admin 1)Error accepting clients: {ex.Message}"));
+            }
+        }
+
+        private void HandleClient(TcpClient client, string clientIP)
+        {
+            try
+            {
+                NetworkStream stream = client.GetStream();
+                byte[] buffer = new byte[1024];
+                int bytesRead;
+
+                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) != 0)
+                {
+                    string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                    if (message.StartsWith("TIME_UPDATE:"))
+                    {
+                        string timeString = message.Substring("TIME_UPDATE:".Length);
+                        if (int.TryParse(timeString, out int remainingTime))
+                        {
+                            Dispatcher.Invoke(() => UpdateClientRemainingTime(clientIP, remainingTime));
+                        }
+                    }
+                    else
+                    {
+                        Dispatcher.Invoke(() => UpdateClientStatus(clientIP, message));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (!(ex is SocketException || ex is IOException))
+                {
+                    Dispatcher.Invoke(() => System.Windows.MessageBox.Show($"(Admin 2)Error handling client {clientIP}: {ex.Message}"));
+                }
+            }
+            finally
+            {
+                client.Close();
+                Dispatcher.Invoke(() => RemoveClient(clientIP));
+            }
+        }
+
+        private void RemoveClient(string clientIP)
+        {
+            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
+            if (client != null)
+            {
+                clients.Remove(client);
+            }
+
+            if (clientConnections.ContainsKey(clientIP))
+            {
+                clientConnections.Remove(clientIP);
+            }
+        }
+
+
+
+        ///****** Klietu laika un statusa atjaunoana ******///
+
+        private void UpdateClientRemainingTime(string clientIP, int remainingTime)
+        {
+            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
+            if (client != null)
+            {
+                client.RemainingTime = remainingTime;
+            }
+
+            ///Ja beidzas laiks tad statusa nosaukums nomainās uz Locked
+            if (remainingTime == 0)
+            {
+                client.Status = "Bloķēts";
+                refreshDataGrid();
+            }
+        }
+
+        private void UpdateClientStatus(string clientIP, string status)
+        {
+            var client = clients.FirstOrDefault(c => c.ClientIP == clientIP);
+            if (client != null)
+            {
+                client.Status = status;
+                client.Name = NameStorage.GetName(clientIP);
+            }
+        }
+
+
+
+        ///****** Labā peles pogas izvēlnes opcijas ******///
+
+        ///Vārda iestatīšana/maiņa
+        private void SetNameMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            ///Izpildot labo klikšķi uz kāda no pieslēgtiem klientiem.
             if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
             {
-                //  Ja tekstboxā neieraksta nekādu laiku tad ieslēdzas infinite time
+                ///Saņem pašreizējo vārdu(Ja tāds ir) un nosūta to uz vārda dialogu.
+                string currentName = NameStorage.GetName(selectedClient.ClientIP);
+                SetNameDialog dialog = new SetNameDialog(currentName);
+                if (dialog.ShowDialog() == true)
+                {
+                    ///Saņem atpakaļ vārdu un pesaista to.
+                    string newName = dialog.ClientName;
+                    NameStorage.SaveName(selectedClient.ClientIP, newName);
+                    selectedClient.Name = newName;
+                }
+            }
+        }
 
+        private void SendRestartMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SendCloseClientMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+
+        ///****** Galvenās klietu laika pievienošanas pogas un laika sākšanas/nosūtīšana funkcijas ******///
+
+        public enum CommandType
+        {
+            ///Komandu sūtīšanas tipi
+            Lock,
+            Unlock,
+            SetTimeLimit,
+            StartInfiniteTimer,
+            StartTimer,
+            ShutDown,
+            SendMessage
+        }
+
+        private void SendCommand(TcpClient client, CommandType commandType, int duration, string? message = null)
+        {
+            try
+            {
+                NetworkStream stream = client.GetStream();
+                string command = message == null ? $"{commandType}:{duration}" : $"{commandType}:{duration}:{message}";
+                byte[] data = Encoding.ASCII.GetBytes(command);
+                stream.Write(data, 0, data.Length);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"(Admin 3)Error sending command: {ex.Message}");
+            }
+        }
+
+        ///CustomTimeBox elementa laika pielikšanas poga
+        private void SetTimeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            {
+                ///CustomTimeBox elementa bezgalīgā laika pievienošana, atstājot tukšu laika lauku
                 if (CustomTimeBox.Text == "" && clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
                 {
                     SendCommand(client, CommandType.StartInfiniteTimer, 0);
-                    selectedClient.Status = "Infinite Timer Started";
+                    selectedClient.Status = "Bezgalīgs laiks uzsākts";
                 }
-                // ja tekstboxā ieraksta laiku tad vai nu pieliekas ierakstītais laiks,  vai arī pieplusojās laiks pie esošā laika.
+                ///Ja CustomTimeBox elementā ieraksta laiku tad vai nu pieliekas ierakstītais laiks, vai arī pieplusojās laiks pie esošā laika
                 else
                 {
                     SetTimer(CommandType.StartTimer, Convert.ToInt32(this.CustomTimeBox.Text) * 60 + selectedClient.RemainingTime);
 
                 }
+            }
+              
+        }
+
+        ///CustomTimeBox elementa laika noņemšanas poga
+        private void RemoveTimeButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            {
+                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+                {
+                    if (int.TryParse(CustomTimeBox.Text, out int customTime) && customTime > 0)
+                    {
+                        int newDuration = selectedClient.RemainingTime - customTime * 60;
+                        if (newDuration < 0)
+                        {
+                            newDuration = 0;
+                        }
+                        SetTimer(CommandType.StartTimer, newDuration);
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Nav ievadīts pareizs skaitlis.");
+                    }
+                }
+            }
+        }
+
+        ///Galveno laika pogu komandas
+        private void Min30Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetTimer(CommandType.StartTimer, 30 * 60);
+        }
+
+        private void Min60Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetTimer(CommandType.StartTimer, 60 * 60);
+        }
+
+        private void Min120Button_Click(object sender, RoutedEventArgs e)
+        {
+            SetTimer(CommandType.StartTimer, 120 * 60);
+        }
+
+        private DispatcherTimer globalTimer; ///Atlikušā laika String atjaunināšanai
+
+        ///Laika skaitīšanas uzsākšanai
+        private void SetTimer(CommandType commandType, int duration)
+        {
+
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            {
+                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+                {
+                    TimeSpan time = TimeSpan.FromSeconds(duration);
+                    string str = time.ToString(@"hh\:mm\:ss"); ///Atlikuša laika kolonas atjaunošana
+
+                    selectedClient.IsTimerActive = true;
+                    selectedClient.RemainingTimeString = str;
+                    selectedClient.RemainingTime = duration;
+
+                    SendCommand(client, commandType, duration);
+                    selectedClient.Status = $"{duration / 60} minūtes pieslēgtas"; ///Klienta statusa kolonas atjaunošana ar laiku
+
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Green); ///Pūlksteņa ikonas izgaismošana kad pieszlēdz laiku
+
+                    if (selectedClient.ClientTimer != null) ///Ja ir jau aktīvas laika pieslēgums, to aptur
+                    {
+                        selectedClient.ClientTimer.Stop();
+                    }
+
+                    selectedClient.ClientTimer = new DispatcherTimer
+                    {
+                        Interval = TimeSpan.FromSeconds(1)
+                    };
+
+                    if (moneySetting) ///Naudas skaitīšanas iestatījuma pārbaude un tā uzsākšana
+                    {
+                        bool startMoney = true;
+                        SetMoney(selectedClient, startMoney);
+                    }
+
+                    ///Atlikušā laika aktīvā atjaunošana
+                    selectedClient.ClientTimer.Tick += (s, e) =>
+                    {
+                        if (selectedClient.RemainingTime > 0)
+                        {
+                            selectedClient.RemainingTime--;
+                            TimeSpan remainingTimeSpan = TimeSpan.FromSeconds(selectedClient.RemainingTime);
+                            selectedClient.RemainingTimeString = remainingTimeSpan.ToString(@"hh\:mm\:ss");
+                            ClientsDataGrid.Items.Refresh();
+                        }
+                        else
+                        {
+                            ///Laika beigšanās nosacījumi
+                            selectedClient.ClientTimer.Stop();
+                            selectedClient.IsTimerActive = false;
+                            TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                            if (moneySetting)
+                            {
+                                bool startMoney = false;
+                                SetMoney(selectedClient, startMoney);
+                            }
+                        }
+                    };
+                    selectedClient.ClientTimer.Start();
+                }
+            }
+
+        }
+
+        ///Laika izslēgšanas poga
+        private void LockButton_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            {
+                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+                {
+                    SendCommand(client, CommandType.Lock, 0); ///Nosūta bloķēšanas komandu
+                    selectedClient.Status = "Bloķēts"; ///Iestata statusa kolonas tekstu
+                    selectedClient.RemainingTime = 0;
+
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent); ///Pūlksteņa ikonas iekrāsošana uz caurspīdīgu
+
+                    if (selectedClient.ClientTimer != null)
+                    {
+                        selectedClient.ClientTimer.Stop();
+                        selectedClient.ClientTimer = null;
+                    }
+
+                    selectedClient.RemainingTimeString = "00:00:00"; ///Nomaina atlikušo laiku uz tukšu
+
+                    if (moneySetting)
+                    {
+                        bool startMoney = false;
+                        SetMoney(selectedClient, startMoney);
+                    }
+                }
+            }
+            refreshDataGrid(); ///Atjauno klientu saraksta elementu
+
+            ///Visu klientu atzīmēšanas ķekša noņemšana ja izslēdz vairakus datorus
+            if (SelectAllPcsShtdw.IsChecked == true)
+            {
+                SelectAllPcsShtdw.IsChecked = false;
             }
         }
 
@@ -563,62 +524,69 @@ namespace PC_Control_2
                 {
                     SendCommand(client, CommandType.ShutDown, 0);
                 }
-            }              
+            }
         }
 
-        public enum CommandType
-        {
-            Lock,
-            Unlock,
-            SetTimeLimit,
-            StartInfiniteTimer,
-            StartTimer,
-            ShutDown,
-            SendMessage
-        }
 
-        public string customTextMessageToSend = "Noklusējums";
 
-        private void SendMessage_Click(object sender, RoutedEventArgs e)
+        ///****** Klietu tabulas lauku atjaunošanās un pārvalde ******///
+
+        private void ClientsDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            bool clientSelected = ClientsDataGrid.SelectedItem != null;
+            min30.IsEnabled = clientSelected;
+            min60.IsEnabled = clientSelected;
+            min120.IsEnabled = clientSelected;
+
+            ///Izvēlētā klienta pūlksteņa ikonas attiecīga iekrāsošana un naudas skaitīšanas summas parādīšana
+            if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
             {
-                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+                if (!clientSelected)
                 {
-                    //string messageTextConverted = StringToAsciiNumber(customTextMessageToSend); 
-                    //int messageTextNumber = Convert.ToInt32(messageTextConverted);
-                    SendCommand(client, CommandType.SendMessage, 0);
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                    moneySumText.Content = "0,00 €";
+                }
+                else
+                {
+                    moneySumText.Content = $"{selectedClient.MoneyCounter:F2} €";
+                }
+                var client = clients.FirstOrDefault();
+                if (client.Status == "Bloķēts" || client.RemainingTime < 0)
+                {
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Transparent);
+                }
+                else if(client.RemainingTime > 0)
+                {
+                    TimerEllipse.Fill = new SolidColorBrush(Colors.Green);
                 }
             }
-        }
 
-        private void SendMessageText_Click(object sender, RoutedEventArgs e)
+        }
+       
+        private void refreshDataGrid()
         {
-            SetCustomMessageDialog dialog = new SetCustomMessageDialog();
-            if (dialog.ShowDialog() == true)
+            ClientsDataGrid.ItemsSource = null;    
+            ClientsDataGrid.ItemsSource = clients;
+
+            var view = CollectionViewSource.GetDefaultView(ClientsDataGrid.ItemsSource);
+            if (view != null)
             {
-                customTextMessageToSend = dialog.customTextMessage;
+                view.SortDescriptions.Clear();
+                view.SortDescriptions.Add(new SortDescription("Nosaukums", ListSortDirection.Ascending));
+                view.Refresh();
             }
-        }
 
-        public static string StringToAsciiNumber(string input)
-        {
-            return string.Join("", input.Select(c => ((int)c).ToString()));
-        }
-
-
-
-        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
-        {
-            if (System.Windows.MessageBox.Show(this, "Aizvērt logu?", "Apstiprinājums", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            foreach (var column in ClientsDataGrid.Columns)
             {
-                cancelEventArgs.Cancel = true;
+                if (column.Header.ToString() == "Nosaukums")
+                {
+                    column.CanUserSort = true;
+                }
+                else
+                {
+                    column.CanUserSort = false;
+                }
             }
-        }
-
-        private void SelectAllPcsShtdw_Checked(object sender, RoutedEventArgs e)
-        {
-            ClientsDataGrid.SelectAll();
         }
 
         private void ClientsDataGrid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -647,7 +615,75 @@ namespace PC_Control_2
             ClientsDataGrid.SelectedItem = null;
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void SelectAllPcsShtdw_Checked(object sender, RoutedEventArgs e)
+        {
+            ClientsDataGrid.SelectAll();
+        }
+
+
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
+        //    {
+        //        //  Ja tekstboxā neieraksta nekādu laiku tad ieslēdzas infinite time
+
+        //        if (CustomTimeBox.Text == "" && clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+        //        {
+        //            SendCommand(client, CommandType.StartInfiniteTimer, 0);
+        //            selectedClient.Status = "Infinite Timer Started";
+        //        }
+        //        // ja tekstboxā ieraksta laiku tad vai nu pieliekas ierakstītais laiks,  vai arī pieplusojās laiks pie esošā laika.
+        //        else
+        //        {
+        //            SetTimer(CommandType.StartTimer, Convert.ToInt32(this.CustomTimeBox.Text) * 60 + selectedClient.RemainingTime);
+
+        //        }
+        //    }
+        //}
+
+
+
+
+
+        ///****** Ziņojumu sūtīšana ******///
+
+        public string customTextMessageToSend = "Noklusejums Administratora";
+
+        private void SendMessage_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (ClientInfo selectedClient in ClientsDataGrid.SelectedItems)
+            {
+                if (clientConnections.TryGetValue(selectedClient.ClientIP, out TcpClient client))
+                {
+                    string? messageToSend = !string.IsNullOrWhiteSpace(customTextMessageToSend) ? customTextMessageToSend : "Uzvesties Klusak!";
+                    SendCommand(client, CommandType.SendMessage, 0, messageToSend);
+                }
+            }
+        }
+
+        private void SendMessageText_Click(object sender, RoutedEventArgs e)
+        {
+            SetCustomMessageDialog dialog = new SetCustomMessageDialog();
+            if (dialog.ShowDialog() == true)
+            {
+                customTextMessageToSend = dialog.customTextMessage;
+            }
+        }
+
+
+
+        ///****** Izvēlnes joslas Programmas iestatījumi ******///
+
+        ///Aizvēršanas loga apstiprinājums
+        private void OnClosing(object sender, CancelEventArgs cancelEventArgs)
+        {
+            if (System.Windows.MessageBox.Show(this, "Aizvērt logu?", "Apstiprinājums", MessageBoxButton.YesNo) != MessageBoxResult.Yes)
+            {
+                cancelEventArgs.Cancel = true;
+            }
+        }
+
+        private void IpColumnVisible_Click(object sender, RoutedEventArgs e)
         {
             MenuItem menuItem = sender as MenuItem;
             bool isChecked = menuItem.IsChecked;
@@ -665,6 +701,7 @@ namespace PC_Control_2
             ClientsDataGrid.Columns[3].Visibility = isChecked ? Visibility.Visible : Visibility.Collapsed;
         }
 
+        ///Uz programmas ieslēgšanu, ielādē saglabātās lietotaja izvēles elementiem
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("Application Loaded");
@@ -677,6 +714,7 @@ namespace PC_Control_2
             IPColumnVisible_.IsChecked = Properties.Settings.Default.ipColumnVisability;
             StatusColumnVisible_.IsChecked = Properties.Settings.Default.statusColumnVisable;
             MoneyConfirm_.IsChecked = Properties.Settings.Default.moneyConfirm;
+
             if (moneySetting)
             {
                 MoneyGrid.Visibility = Visibility.Visible;
@@ -697,6 +735,7 @@ namespace PC_Control_2
                 Closing -= OnClosing;
             }
 
+            ///Primārās krāsas ielāde
             var primaryColorString = Properties.Settings.Default.PrimaryColor;
             if (!string.IsNullOrEmpty(primaryColorString))
             {
@@ -710,7 +749,7 @@ namespace PC_Control_2
                 Console.WriteLine("No PrimaryColor saved; using default.");
             }
 
-            // Load secondary color
+            ///Sekundārās krāsas ielāde
             var secondaryColorString = Properties.Settings.Default.SecondaryColor;
             if (!string.IsNullOrEmpty(secondaryColorString))
             {
@@ -724,7 +763,7 @@ namespace PC_Control_2
                 Console.WriteLine("No SecondaryColor saved; using default.");
             }
 
-            // Load ternary color
+            ///Ternārās krāsas ielāde
             var ternaryColorString = Properties.Settings.Default.TernaryColor;
             if (!string.IsNullOrEmpty(ternaryColorString))
             {
@@ -739,6 +778,7 @@ namespace PC_Control_2
             }
         }
 
+        ///Prasīšanas pirms aizvēršanas dialoga iestatījums
         private void CloseConfirm__Click(object sender, RoutedEventArgs e)
         {
             MenuItem menuItem = sender as MenuItem;
@@ -756,11 +796,13 @@ namespace PC_Control_2
             }
         }
 
+        ///Izvēlnes joslas aizvēršana bez prasīšanas dialoga
         private void CloseNow_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
+        ///Naudas skaitīšanas kkoeficienta izvēlas opcija
         private void MoneyMultiplierDialog__Click(object sender, RoutedEventArgs e)
         {
             double currentMultiplier = Properties.Settings.Default.moneyMultiplier;
@@ -772,6 +814,7 @@ namespace PC_Control_2
             }
         }
 
+        ///Naudas skaitīšanas ieslēgšanas opcija. Parādīs skaitīšanas elementu logā
         private void MoneyConfirm__Click(object sender, RoutedEventArgs e)
         {
             MenuItem menuItem = sender as MenuItem;
@@ -798,20 +841,20 @@ namespace PC_Control_2
         {
             if (start)
             {
-                ///Jo laiks skaita uz leju, pašu nevar izmantot lai uzturētu skaitu. Tapēc ir pagaidu laiks un zemāk tiek izmantot izgājušais laiks, lai izņemtu sekundes priekš formulas.
+                ///Jo laiks skaita uz leju, pašu nevar izmantot lai uzturētu skaitu. Tapēc ir pagaidu laiks un zemāk tiek izmantot izgājušais laiks, lai izņemtu sekundes priekš formulas
                 int InitialDuration = client.RemainingTime;
                 client.MoneyCounter = 0;
 
-                ///katrā klienta iekšējā sekundes tikšķi izpilda summas formulu.
+                ///katrā klienta iekšējā sekundes tikšķi izpilda summas formulu
                 if (ClientsDataGrid.SelectedItem is ClientInfo selectedClient)
                 {
                     selectedClient.ClientTimer.Tick += (s, e) =>
                     {
                         double elapsedSeconds = InitialDuration - client.RemainingTime;
-                        double multiplier = Properties.Settings.Default.moneyMultiplier; ///Ielāde no iestatījumiem koeficientu.
-                        selectedClient.MoneyCounter = (multiplier * ((100 * elapsedSeconds) / 1800))/100; ///Dala ar 100 jo skaitītājs ir centos.
+                        double multiplier = Properties.Settings.Default.moneyMultiplier; ///Ielāde no iestatījumiem koeficientu
+                        selectedClient.MoneyCounter = (multiplier * ((100 * elapsedSeconds) / 1800))/100; ///Dala ar 100 jo skaitītājs ir centos
 
-                        ///Atjauno skaitītāju saskarnē.
+                        ///Atjauno skaitītāju saskarnē
                         if (ClientsDataGrid.SelectedItem == client)
                         {
                             moneySumText.Content = $"{client.MoneyCounter:F2} €";
@@ -820,6 +863,10 @@ namespace PC_Control_2
                 }
             }
         }
+
+
+
+        ///****** Loga krāsas elementu maiņa un saglabāšana ******///
 
         private void UpdatePrimaryColor(Color newColor)
         {
@@ -855,12 +902,8 @@ namespace PC_Control_2
 
         private void PrimaryColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
-            Console.WriteLine("PrimaryColorPicker_SelectedColorChanged called");
             if (e.NewValue.HasValue)
             {
-                Console.WriteLine("PrimaryColorPicker_SelectedColorChanged if successful");
-                Console.WriteLine($"PrimaryColor changed by user to: {e.NewValue.Value}");
-
                 UpdatePrimaryColor(e.NewValue.Value);
             }
         }
@@ -881,6 +924,7 @@ namespace PC_Control_2
             }
         }
 
+        ///Noklusējuma krāsu atgriešana
         private void DefaultColors__Click(object sender, RoutedEventArgs e)
         {
             Color primaryColor = (Color)ColorConverter.ConvertFromString("#6a994e");
@@ -891,5 +935,36 @@ namespace PC_Control_2
             UpdateSecondaryColor(secondaryColor);
             UpdateTernaryColor(tertiaryColor);
         }
+
+
+        ///****** CustomTimeBox laika elementa ciparu ievades nosacījumi ******///
+
+        private bool IsTextNumeric(string text)
+        {
+            return int.TryParse(text, out _);
+        }
+
+        private void CustomTimeBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsTextNumeric(e.Text); ///Pārbauda vai tikai teksts tiek ievadīts
+        }
+
+        private void CustomTimeBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (int.TryParse(CustomTimeBox.Text, out _))
+            {
+                if (CustomTimeBox.Text.Length > 3) ///Lai ievadīt varētu tikai 3 ciparu skaitļus
+                {
+                    CustomTimeBox.Text = CustomTimeBox.Text.Substring(0, 3);
+                    CustomTimeBox.SelectionStart = CustomTimeBox.Text.Length;
+                }
+            }
+            else if (!string.IsNullOrEmpty(CustomTimeBox.Text)) 
+            {
+                CustomTimeBox.Text = string.Empty; 
+            }
+        }
+
+
     }
 }
